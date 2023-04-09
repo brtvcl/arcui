@@ -1,0 +1,137 @@
+.arc-input-container {
+	display: inline-block;
+	font-family: "Open Sans", sans-serif;
+	text-align: left;
+	color: black;
+}
+
+.arc-input-label {
+	font-weight: 500;
+	font-size: 1rem;
+	color: #ACAFBA;
+}
+
+.arc-input {
+	margin-top: 2px;
+	display: flex;
+    position: relative;
+    background-color: #ffffff;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0px;
+    transition: all 0.2s;
+    border: 1px solid #C7C9D1;
+    border-radius: 0.625rem;
+    padding: 0px 0.5rem;
+    height: 2.5rem;
+    cursor: text;
+	line-height: 100%;
+	align-items: center;
+	font-size: 1rem;
+}
+
+
+
+.arc-input-icon {
+	margin-left: 0.25rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.arc-input-control {
+	margin-left: 0.25rem;
+	padding: 0;
+	border: 0;
+	font-size: inherit;
+	background-color: transparent;
+	width: 100%;
+}
+
+.arc-input-control::-ms-reveal,
+.arc-input-control::-ms-clear {
+  display: none;
+}
+
+.arc-input-control:focus {
+	outline: none;
+}
+
+.arc-input-reveal-toggle, .arc-input-clear-button {
+	flex-shrink: 0;
+	margin-left: 0.25rem;
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;	
+	cursor: pointer;
+}
+
+/* SIZE */
+.arc-small .arc-input {
+    height: 32px;
+    border-radius: 8px;
+    padding: 0px 6px;
+    font-size: 0.875rem;
+}
+
+.arc-large .arc-input {
+    height: 48px;
+    padding: 0px 10px;
+    border-radius: 12px;
+}
+
+/* INPUT HOVER & FOCUS STATE  */
+.arc-input:hover:not(.arc-disabled):not(.arc-success):not(.arc-error):not(.arc-warning)  {
+	border: 1px solid #3375FE;
+}
+.arc-input-container:focus-within .arc-input, .arc-input-focus  {
+	border: 1px solid #3375FE;
+	outline: 2px solid #CCDDFF;
+}
+
+.arc-input-focus {
+	transition: none;
+}
+
+/* INPUT SUCCESS STATUS */
+.arc-success:not(.arc-disabled) .arc-input {
+	border: 1px solid #2BE376;
+}
+
+.arc-success:focus-within .arc-input {
+	border: 1px solid #2BE376;
+	outline: 2px solid #D7F7E4;
+}
+
+/* INPUT WARNING STATUS */
+.arc-warning:not(.arc-disabled) .arc-input {
+	border: 1px solid #FEB343;
+}
+.arc-warning:focus-within .arc-input {
+	border: 1px solid #FEB343;
+	outline: 2px solid #FFF0D9;
+}
+
+/* INPUT ERROR STATUS */
+.arc-error:not(.arc-disabled) .arc-input {
+	border: 1px solid #FD5156;
+}
+.arc-error:focus-within .arc-input {
+	border: 1px solid #FD5156;
+	outline: 2px solid #FFDCDD;
+}
+
+/* DISABLED */
+
+.arc-disabled .arc-input {
+    border: 1px solid #cbd0d4;
+    background-color:#e2e6e9;
+    cursor: not-allowed;
+    color: #ACAFBA;
+}
+
+.arc-disabled .arc-input-control {
+	cursor: not-allowed;
+}

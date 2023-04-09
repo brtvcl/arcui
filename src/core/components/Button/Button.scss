@@ -1,0 +1,139 @@
+@use "../../shared/colors";
+
+.arc-btn {
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0rem;
+    vertical-align: top;
+    cursor: pointer;
+    transition: 0.2s;
+    
+    
+    padding: 0.188rem 1rem;
+    text-align: center;
+    
+    line-height: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+
+.arc-btn > span {
+    vertical-align: middle;
+}
+
+.arc-btn-primary {
+    background-color: colors.$color-primary-100;  
+    border: 1px solid transparent;
+    color: #fff;
+}
+
+.arc-btn-secondary {
+    background-color: #CCDDFF;  
+    border: 1px solid transparent;
+    color: colors.$color-primary-100;
+}
+
+.arc-btn-outline {
+    background-color: #ffffff;  
+    border: 1px solid colors.$color-slate-40;
+    color: colors.$color-slate-80
+}
+
+.arc-btn-ghost {
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: colors.$color-slate-80;
+}
+
+.arc-btn-body {
+	color: "#ffffff";
+}
+
+// HOVER STATES
+.arc-btn-primary:hover {
+	background-color: colors.$color-primary-dark;
+}
+
+.arc-btn-secondary:hover {
+	background-color: colors.$color-primary-40;
+}
+
+.arc-btn-outline:hover {
+	background-color: colors.$color-slate-20;
+}
+
+.arc-btn-ghost:hover {
+	background-color: colors.$color-slate-20;
+}
+
+// ACTIVE STATES
+.arc-btn-primary:focus, .arc-btn-outline:focus, .arc-btn-ghost:focus {
+	outline: 2px solid colors.$color-primary-20;
+}
+.arc-btn-secondary:focus {
+	outline: 2px solid colors.$color-primary-60;
+}
+
+// DISABLED STATE
+.arc-disabled.arc-btn {
+	color: colors.$color-slate-60;
+	background-color: colors.$color-slate-20;
+	cursor: not-allowed;
+	outline: 0rem solid transparent;
+}
+
+// SUCCESS STATE
+.arc-btn-primary.arc-success {
+	background-color: colors.$color-success-100;  
+    color: #fff;
+}
+
+// ICON 
+.arc-btn-icon {
+	height: 1.5rem;
+	margin-right: 0.75rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+// SIZES
+.arc-btn.arc-medium {
+	border-radius: 0.625rem;
+	height: 2.5rem;
+	font-size: 1rem;
+}
+
+.arc-btn.arc-large {
+	border-radius: 0.75rem;
+	height: 3rem;
+	font-size: 18px;
+}
+
+.arc-btn.arc-small {
+	border-radius: 0.5rem;
+	height: 2rem;
+	font-size: 14px;
+}
+
+// SQUARE
+.arc-btn-square.arc-medium {
+	width: 2.5rem;
+	padding: 0.5rem;
+}
+.arc-btn-square.arc-large {
+	width: 3rem;
+	padding: 0.5rem;
+}
+.arc-btn-square.arc-small {
+	width: 2rem;
+	padding: 0.5rem;
+}
+.arc-btn-square .arc-btn-icon {
+	margin: 0;
+	width: 100%;
+}

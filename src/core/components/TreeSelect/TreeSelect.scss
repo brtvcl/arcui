@@ -1,0 +1,146 @@
+.arc-tree-container * {
+	font-family: "Open Sans", sans-serif;
+	text-align: left;
+	color: black;
+}
+
+.arc-tree-branch {
+	background-color: #fff;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-left: var(--level);
+	height: 2rem;
+	line-height: 2rem;
+	padding: 0 0.5rem;
+	vertical-align: middle;
+}
+
+.arc-tree-branch:hover {
+	background-color: #F2F2F4;
+}
+
+.arc-tree-container {
+	display: inline-block;
+}
+
+.arc-tree {
+	display: block;
+    position: relative;
+    background-color: #ffffff;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0px;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #C7C9D1;
+    border-radius: 10px;
+    padding: 0px 8px;
+    height: 40px;
+    cursor: pointer;
+	line-height: 100%;
+}
+
+
+.arc-tree-body {
+	height: 100%;
+	padding: 0 4px;
+}
+
+.arc-tree-display {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	color: #23262F;
+}
+
+/* TREE HOVER & FOCUS STATE  */
+.arc-tree-container:hover:not(.arc-disabled):not(.arc-success):not(.arc-error):not(.arc-warning) .arc-tree  {
+	border: 1px solid #3375FE;
+}
+.arc-tree-focus  {
+	transition: 0.4s;
+	border: 1px solid #3375FE;
+	outline: 2px solid #CCDDFF;
+}
+
+/* TREE SUCCESS STATUS */
+.arc-success:not(.arc-disabled) .arc-tree {
+	border: 1px solid #2BE376;
+}
+
+.arc-success .arc-tree-focus {
+	border: 1px solid #2BE376;
+	outline: 2px solid #D7F7E4;
+}
+
+/* TREE WARNING STATUS */
+.arc-warning:not(.arc-disabled) .arc-tree {
+	border: 1px solid #FEB343;
+}
+.arc-warning .arc-tree-focus {
+	border: 1px solid #FEB343;
+	outline: 2px solid #FFF0D9;
+}
+
+/* TREE ERROR STATUS */
+.arc-error:not(.arc-disabled) .arc-tree {
+	border: 1px solid #FD5156;
+}
+.arc-error .arc-tree-focus {
+	border: 1px solid #FD5156;
+	outline: 2px solid #FFDCDD;
+}
+.arc-tree-dropdown {
+	box-shadow:0px 8px 16px rgba(0, 0, 0, 0.1);
+	margin-top:-0.75rem;
+	border:1px solid #d8d8d8;
+	border-radius:10px;
+	padding:10px;
+	line-height:1;
+	cursor:pointer;
+	background-color: #ffffff;
+	position: absolute;
+	z-index: 10;
+	user-select: none;
+	max-height: 400px;
+	overflow: auto;
+}
+
+.arc-tree-dropdown  ul {
+	list-style:none;
+	margin:auto;
+	padding:0px;
+	width: 100%;
+}
+
+.arc-tree-small {
+    height: 32px;
+    border-radius: 8px;
+    padding: 0px 6px;
+    font-size: 14px;
+}
+
+.arc-tree-large {
+    height: 48px;
+    padding: 0px 10px;
+    border-radius: 12px;
+}
+
+/* DISABLED */
+
+.arc-disabled .arc-tree {
+    border: 1px solid #cbd0d4;
+    background-color:#e2e6e9;
+    cursor: not-allowed;
+    color: #ACAFBA;
+}
+
+.arc-disabled .arc-tree-display {
+	color: #ACAFBA;
+}
+
+.arc-tree-arrow {
+	display: inline-block;
+	width: 1.5rem;
+	vertical-align: middle;
+	margin-top: 2px;
+}

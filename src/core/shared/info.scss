@@ -1,0 +1,23 @@
+/* INFO DEFAULT STATUS */
+
+.arc-info {
+	font-weight: 500;
+	color: #ACAFBA!important;
+	font-size: 0.75rem;
+	margin-top: 0.125rem;
+}
+
+/* INFO SUCCESS STATUS */
+.arc-success:not(.arc-disabled) .arc-info {
+	color: #2BE376!important;
+}
+
+/* INFO WARNING STATUS */
+.arc-warning:not(.arc-disabled) .arc-info {
+	color: #FEB343!important;
+}
+
+/* INFO ERROR STATUS */
+.arc-error:not(.arc-disabled) .arc-info {
+	color: #FD5156!important;
+}

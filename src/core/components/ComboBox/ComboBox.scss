@@ -1,0 +1,236 @@
+@use "../../shared/colors";
+
+@function toRem($value) {
+    $remValue: calc($value / 16) + rem;	
+    @return $remValue;
+}
+
+.arc-combobox-container {
+	display: inline-block;
+	font-family: "Open Sans", sans-serif;
+	text-align: left;
+	color: black;
+}
+
+.arc-combobox-label {
+	font-weight: 500;
+	font-size: 1rem;
+	color: colors.$color-slate-60;
+}
+
+.arc-combobox {
+	margin-top: 2px;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 0.5rem;
+    position: relative;
+    background-color: #ffffff;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: 0px;
+    transition: all 0.2s;
+    border: 1px solid colors.$color-slate-40;
+    border-radius: 0.625rem;
+    padding: 0.438rem 0.5rem;
+    height: auto;
+	min-height: 2.5rem;
+    cursor: pointer;
+	line-height: 100%;
+	align-items: center;
+	font-size: 1rem;
+}
+
+/* SEARCH BOX*/
+.arc-combobox .arc-combobox-search {
+	border: none;
+	outline: none;
+	width: 8ch;
+	flex: 1;
+	padding: 0.25rem;
+	font-size: 1rem;
+	height: 1rem;
+	line-height: 1rem;
+}
+
+
+
+/* HOVER & FOCUS STATE  */
+.arc-combobox-container:hover:not(.arc-disabled):not(.arc-success):not(.arc-error):not(.arc-warning) .arc-combobox  {
+	border: 1px solid #3375FE;
+}
+.arc-combobox-container:focus-within .arc-combobox, .arc-combobox-focus  {
+	border: 1px solid #3375FE;
+	outline: 2px solid #CCDDFF;
+}
+
+/* COMBOBOX SUCCESS STATUS */
+.arc-success:not(.arc-disabled) .arc-combobox {
+	border: 1px solid #2BE376;
+}
+
+.arc-success .arc-combobox-focus, .arc-success:focus-within .arc-combobox {
+	border: 1px solid #2BE376;
+	outline: 2px solid #D7F7E4;
+}
+
+/* COMBOBOX WARNING STATUS */
+.arc-warning:not(.arc-disabled) .arc-combobox {
+	border: 1px solid #FEB343;
+}
+.arc-warning .arc-combobox-focus, .arc-warning:focus-within .arc-combobox {
+	border: 1px solid #FEB343;
+	outline: 2px solid #FFF0D9;
+}
+
+/* COMBOBOX ERROR STATUS */
+.arc-error:not(.arc-disabled) .arc-combobox {
+	border: 1px solid #FD5156;
+}
+.arc-error .arc-combobox-focus, .arc-error:focus-within .arc-combobox {
+	border: 1px solid #FD5156;
+	outline: 2px solid #FFDCDD;
+}
+
+/* COMBOBOX SELECTED*/
+.arc-combobox-value {
+	padding: 0.25rem;
+}
+
+.arc-combobox-tag {
+	padding: 0.25rem;
+	height: 1.5rem;
+	margin-right: 0.25rem;
+	background-color: colors.$color-slate-20;
+	border-radius: 0.25rem;
+	cursor: default;
+}
+.arc-combobox-tag-button {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	color: colors.$color-dark-60;
+	margin-left: 0.25rem;
+}
+
+.arc-combobox-tag-button:hover {
+	background-color: colors.$color-slate-40;
+	color: colors.$color-dark-80;
+}
+
+/* SIZE STATE*/
+
+/* LARGE */
+.arc-large .arc-combobox {
+	min-height: 3rem;
+	border-radius: toRem(8);
+}
+
+.arc-large .arc-combobox-tag {
+	height: 2rem;
+	line-height: toRem(16);
+	padding: toRem(8);
+}
+
+.arc-large .arc-combobox-tag-label {
+	font-size: toRem(16);
+}
+
+.arc-large .arc-combobox-value {
+	padding: 0.5rem 0.25rem;
+}
+
+/* SMALL */
+.arc-small .arc-combobox {
+	min-height: 2rem;
+	padding: toRem(4) toRem(6);
+	border-radius: toRem(8);
+	row-gap: 0.25rem;
+}
+
+.arc-small .arc-combobox-tag {
+	height: 1.25rem;
+	line-height: 0.75rem;
+	padding: toRem(2);
+}
+
+.arc-small .arc-combobox-tag-label {
+	font-size: toRem(14);
+}
+
+.arc-small .arc-combobox-value {
+	padding: toRem(3) toRem(4);
+}
+
+
+/* DROP DOWN */
+.arc-combobox-dropdown {
+	box-shadow:0px 8px 16px rgba(0, 0, 0, 0.1);
+	margin-top:-0.75rem;
+	border:1px solid #d8d8d8;
+	border-radius:10px;
+	padding:10px;
+	line-height:1;
+	background-color: #ffffff;
+	position: absolute;
+	z-index: 10;
+	user-select: none;
+	max-height: 400px;
+	overflow: auto;
+}
+
+.arc-combobox-dropdown  ul {
+	list-style:none;
+	margin:auto;
+	padding:0px;
+	width: 100%;
+}
+
+.arc-combobox-option {
+	background-color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 2rem;
+	line-height: 2rem;
+	padding: 0 0.5rem;
+	vertical-align: middle;
+	margin-bottom: toRem(4);
+}
+
+.arc-combobox-option.selected {
+	background-color: colors.$color-primary-10;
+}
+
+.arc-combobox-option:hover {
+	background-color: #F2F2F4;
+}
+
+.arc-combobox-no-option {
+	background-color: #fff;
+	border-radius: 5px;
+	height: 2rem;
+	line-height: 2rem;
+	padding: 0 0.5rem;
+	vertical-align: middle;
+}
+
+.arc-combobox-check {
+	height: 100%;
+	min-height: 10px;
+	margin-left: auto;
+	display: inline-flex;
+	align-items: center;
+	color: colors.$color-primary-100;
+
+	.arc-combobox-check-svg {
+		height: 60%;
+	}
+}
+
+.arc-combobox-option-items {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
