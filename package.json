@@ -1,5 +1,5 @@
 {
-	"name": "arcui",
+	"name": "@brtvcl/arcui",
 	"version": "1.0.0",
 	"type": "module",
 	"source": "src/index.ts",
@@ -51,5 +51,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"preact": "^10.11.3"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
