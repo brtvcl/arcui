@@ -1,14 +1,22 @@
 {
-	"name": "foo",
+	"name": "arcui",
+	"version": "1.0.0",
 	"type": "module",
 	"source": "src/index.ts",
 	"exports": {
-		"require": "./dist/arcui.cjs",
-		"default": "./dist/arcui.modern.js"
+		".": {
+			"import": {
+				"default": "./dist/index.js",
+				"types": "./dist/index.d.ts"
+			}	
+		}
 	},
-	"main": "./dist/arcui.cjs",
-	"module": "./dist/arcui.module.js",
-	"unpkg": "./dist/arcui.umd.js",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist/**/*"
+	 ],
 	"scripts": {
 		"dev:svelte": "concurrently \"vite test/manual/svelte\" \"gulp watch:svelte --gulpfile ./configs/gulpfile.cjs\"",
 		"dev:core": "concurrently \"vite test/manual/core\" \"gulp watch:core --gulpfile ./configs/gulpfile.cjs\"",
@@ -39,7 +47,7 @@
 		"glob-parent": "6.0.2"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Berat Vıcıl",
 	"license": "MIT",
 	"dependencies": {
 		"preact": "^10.11.3"
