@@ -1,16 +1,8 @@
 {
 	"name": "@brtvcl/arcui",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"source": "src/index.ts",
-	"exports": {
-		".": {
-			"import": {
-				"default": "./dist/index.js",
-				"types": "./dist/index.d.ts"
-			}	
-		}
-	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
