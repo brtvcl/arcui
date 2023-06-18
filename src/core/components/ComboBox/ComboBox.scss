@@ -1,8 +1,8 @@
 @use "../../shared/colors";
 
 @function toRem($value) {
-    $remValue: calc($value / 16) + rem;	
-    @return $remValue;
+	$remValue: calc($value / 16) + rem;
+	@return $remValue;
 }
 
 .arc-combobox-container {
@@ -23,18 +23,18 @@
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: 0.5rem;
-    position: relative;
-    background-color: #ffffff;
-    outline-color: transparent;
-    outline-style: solid;
-    outline-width: 0px;
-    transition: all 0.2s;
-    border: 1px solid colors.$color-slate-40;
-    border-radius: 0.625rem;
-    padding: 0.438rem 0.5rem;
-    height: auto;
+	position: relative;
+	background-color: #ffffff;
+	outline-color: transparent;
+	outline-style: solid;
+	outline-width: 0px;
+	transition: all 0.2s;
+	border: 1px solid colors.$color-slate-40;
+	border-radius: 0.625rem;
+	padding: 0.438rem 0.5rem;
+	height: auto;
 	min-height: 2.5rem;
-    cursor: pointer;
+	cursor: pointer;
 	line-height: 100%;
 	align-items: center;
 	font-size: 1rem;
@@ -52,43 +52,45 @@
 	line-height: 1rem;
 }
 
-
-
 /* HOVER & FOCUS STATE  */
-.arc-combobox-container:hover:not(.arc-disabled):not(.arc-success):not(.arc-error):not(.arc-warning) .arc-combobox  {
-	border: 1px solid #3375FE;
+.arc-combobox-container:hover:not(.arc-disabled):not(.arc-success):not(.arc-error):not(.arc-warning) .arc-combobox {
+	border: 1px solid #3375fe;
 }
-.arc-combobox-container:focus-within .arc-combobox, .arc-combobox-focus  {
-	border: 1px solid #3375FE;
-	outline: 2px solid #CCDDFF;
+.arc-combobox-container:focus-within .arc-combobox,
+.arc-combobox-focus {
+	border: 1px solid #3375fe;
+	outline: 2px solid #ccddff;
 }
 
 /* COMBOBOX SUCCESS STATUS */
 .arc-success:not(.arc-disabled) .arc-combobox {
-	border: 1px solid #2BE376;
+	border: 1px solid #2be376;
 }
 
-.arc-success .arc-combobox-focus, .arc-success:focus-within .arc-combobox {
-	border: 1px solid #2BE376;
-	outline: 2px solid #D7F7E4;
+.arc-success .arc-combobox-focus,
+.arc-success:focus-within .arc-combobox {
+	border: 1px solid #2be376;
+	outline: 2px solid #d7f7e4;
 }
 
 /* COMBOBOX WARNING STATUS */
 .arc-warning:not(.arc-disabled) .arc-combobox {
-	border: 1px solid #FEB343;
+	border: 1px solid #feb343;
 }
-.arc-warning .arc-combobox-focus, .arc-warning:focus-within .arc-combobox {
-	border: 1px solid #FEB343;
-	outline: 2px solid #FFF0D9;
+.arc-warning .arc-combobox-focus,
+.arc-warning:focus-within .arc-combobox {
+	border: 1px solid #feb343;
+	outline: 2px solid #fff0d9;
 }
 
 /* COMBOBOX ERROR STATUS */
 .arc-error:not(.arc-disabled) .arc-combobox {
-	border: 1px solid #FD5156;
+	border: 1px solid #fd5156;
 }
-.arc-error .arc-combobox-focus, .arc-error:focus-within .arc-combobox {
-	border: 1px solid #FD5156;
-	outline: 2px solid #FFDCDD;
+.arc-error .arc-combobox-focus,
+.arc-error:focus-within .arc-combobox {
+	border: 1px solid #fd5156;
+	outline: 2px solid #ffdcdd;
 }
 
 /* COMBOBOX SELECTED*/
@@ -164,15 +166,29 @@
 	padding: toRem(3) toRem(4);
 }
 
+/* DISABLED */
+.arc-disabled .arc-combobox {
+	border: 1px solid #cbd0d4;
+	background-color: #e2e6e9;
+	cursor: not-allowed;
+	color: #acafba;
+}
+.arc-disabled .arc-combobox-search,
+.arc-disabled .arc-combobox-tag,
+.arc-disabled .arc-combobox-tag-button {
+	background-color: #e2e6e9;
+	cursor: not-allowed;
+	color: #acafba;
+}
 
 /* DROP DOWN */
 .arc-combobox-dropdown {
-	box-shadow:0px 8px 16px rgba(0, 0, 0, 0.1);
-	margin-top:-0.75rem;
-	border:1px solid #d8d8d8;
-	border-radius:10px;
-	padding:10px;
-	line-height:1;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+	margin-top: -0.75rem;
+	border: 1px solid #d8d8d8;
+	border-radius: 10px;
+	padding: 10px;
+	line-height: 1;
 	background-color: #ffffff;
 	position: absolute;
 	z-index: 10;
@@ -181,10 +197,10 @@
 	overflow: auto;
 }
 
-.arc-combobox-dropdown  ul {
-	list-style:none;
-	margin:auto;
-	padding:0px;
+.arc-combobox-dropdown ul {
+	list-style: none;
+	margin: auto;
+	padding: 0px;
 	width: 100%;
 }
 
@@ -204,7 +220,7 @@
 }
 
 .arc-combobox-option:hover {
-	background-color: #F2F2F4;
+	background-color: #f2f2f4;
 }
 
 .arc-combobox-no-option {
