@@ -5,3 +5,4 @@ export { Input } from "./core/components/Input/Input";
 export { Button } from "./core/components/Button/Button";
 export { ComboBox } from "./core/components/ComboBox/ComboBox";
 export { Select } from "./core/components/Select/Select";
+export { Slider } from "./core/components/Slider/Slider";
