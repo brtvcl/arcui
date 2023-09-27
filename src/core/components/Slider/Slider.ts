@@ -44,10 +44,22 @@ export class Slider {
 		function createComponent() {
 
 			const [isDragging, setIsDragging] = useState(false);
-			const [value, setValue] = useState(0);
+			const [value, setValue] = useState(state.value);
 
 			//Reference to slider container
 			const containerRef = useRef(null);
+
+			// Container classes
+			const containerClassList:Array<string> = [];
+			containerClassList.push("arc-slider-container");
+			
+			if (isDragging) {
+				containerClassList.push("arc-slider-active");
+			}
+
+			if (state.disabled) {
+				containerClassList.push("arc-slider-disabled");
+			}
 
 			//Function to move value and calculcate percentage based on mouse position
 			function moveValue(mousex: number) {
@@ -77,7 +89,6 @@ export class Slider {
 			function handleDragMove(e: MouseEvent) {
 				//If mouse is down move slider
 				if (isDragging) {
-					console.log(e.clientX);
 					e.preventDefault();
 					moveValue(e.clientX);
 				}
@@ -100,6 +111,10 @@ export class Slider {
 			}, [isDragging])
 
 			function handleDragStart(e: MouseEvent) {
+				if (state.disabled) {
+					return;
+				}
+
 				//Move value once for when just clicking and not dragging
 				moveValue(e.clientX);
 
@@ -107,7 +122,9 @@ export class Slider {
 				setIsDragging(true);
 			}
 
-			return h("div", { class: "arc-slider-container", onMouseDown:handleDragStart, ref: containerRef }, [
+
+
+			return h("div", { class: containerClassList.join(" "), onMouseDown:handleDragStart, ref: containerRef }, [
 				h("div", { class: "arc-slider-bar" }, [
 					h("div", { class: "arc-slider-fill", style:{ width: `${value}%` }}),
 					h("div", { class: "arc-slider-handle", style:{ left: `${value}%`  }}),
