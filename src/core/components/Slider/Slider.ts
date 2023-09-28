@@ -2,6 +2,7 @@ import type { EventRecord } from "../../shared/types";
 import type { SliderState } from "./types";
 import { h, render, createElement } from "preact";
 import { useEffect, useState, useRef } from "preact/hooks";
+import { randomRange } from "../../utils/randomRange";
 
 export class Slider {
 	constructor(props: Partial<SliderState>, element: HTMLDivElement) {
@@ -25,8 +26,23 @@ export class Slider {
 		value: 0
 	};
 
-	on() {}
-	off() {}
+	on(type: "change", calback: (value: number)=>void):number;
+	on(type: string, callback: Function):number {
+		// Create random id
+		let id = randomRange(1000, 99999999);
+
+		// Register the event
+		this.eventRegister.push({ id, type, callback});
+
+		// Return id so it can be removed later
+		return id;
+	};
+
+	off(id: number) {
+		// Filter the registered event with id
+		this.eventRegister = this.eventRegister.filter(event => event.id !== id);
+	};
+
 	update(state: Partial<SliderState>) {
 		// Update state
 		this.state = {
@@ -75,8 +91,12 @@ export class Slider {
 				percentage = Math.min(Math.max(percentage, 0), 100); //Clamp percentage between 0-100
 				setValue(percentage); //set value
 				
-				//dispatch event
-				// props.onChange && props.onChange(percentage);
+				//dispatch change event
+				instance.eventRegister.forEach((event) => {
+					if (event.type == "change") {
+						event.callback(percentage);
+					}
+				});
 				
 			};
 
