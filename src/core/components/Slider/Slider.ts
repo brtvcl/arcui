@@ -67,15 +67,26 @@ export class Slider {
 
 			// Container classes
 			const containerClassList:Array<string> = [];
-			containerClassList.push("arc-slider-container");
+			containerClassList.push("arc", "arc-slider-container");
 			
+			// Set active
 			if (isDragging) {
 				containerClassList.push("arc-slider-active");
 			}
 
+			// Set disabled
 			if (state.disabled) {
-				containerClassList.push("arc-slider-disabled");
+				containerClassList.push("arc-disabled");
 			}
+
+			// Set status
+			if (state.status == "success") {
+				containerClassList.push("arc-success")
+			} else if (state.status == "warning") {
+				containerClassList.push("arc-warning");
+			} else if (state.status == "error") {
+				containerClassList.push("arc-error");
+			};
 
 			//Function to move value and calculcate percentage based on mouse position
 			function moveValue(mousex: number) {
@@ -144,11 +155,16 @@ export class Slider {
 
 
 
-			return h("div", { class: containerClassList.join(" "), onMouseDown:handleDragStart, ref: containerRef }, [
-				h("div", { class: "arc-slider-bar" }, [
-					h("div", { class: "arc-slider-fill", style:{ width: `${value}%` }}),
-					h("div", { class: "arc-slider-handle", style:{ left: `${value}%`  }}),
-				])
+			return h("div", { class: containerClassList.join(" "), ref: containerRef }, [
+				state.label ? h("label", { class: "arc-slider-label" }, state.label) : null,
+				h("div", { class: "arc-slider", onMouseDown:handleDragStart}, [
+					h("div", { class: "arc-slider-bar" }, [
+						h("div", { class: "arc-slider-fill", style:{ width: `${value}%` }}),
+						h("div", { class: "arc-slider-handle", style:{ left: `${value}%`  }}),
+					])
+				]),
+				state.info ? h("div", { class: "arc-info" }, state.info) : null,
+				
 			]);
 		}
 

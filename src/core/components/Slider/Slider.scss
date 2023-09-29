@@ -1,16 +1,16 @@
 @use "../../shared/colors";
 
 .arc-slider-container {
-	cursor: pointer;
     width: 100%;
-    height:12px;
-    display: flex;
-    align-items: center;
+    font-family: "Open Sans", sans-serif;
 }
 
-.arc-slider-container.arc-slider-disabled {
-    cursor: not-allowed;
+.arc-slider-label {
+	font-weight: 500;
+	font-size: 1rem;
+	color: colors.$color-slate-60;
 }
+
 
 
 .arc-slider-bar {
@@ -19,8 +19,17 @@
     border-radius: 99px;
     background-color: #E9EAEB;
     position: relative;
-    margin: auto;
 }
+
+.arc-slider {
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.arc-disabled .arc-slider {
+    cursor: not-allowed;
+}
+
 
 .arc-slider-handle {
     width: 16px;
@@ -33,7 +42,7 @@
     border-radius: 99px;
 }
 
-.arc-slider-container:hover:not(.arc-slider-disabled) .arc-slider-handle {
+.arc-slider-container:hover:not(.arc-disabled) .arc-slider-handle {
     border: 1px solid #0053FE;
 }
 
@@ -50,15 +59,15 @@
 
 
 // DISABLED
-.arc-slider-disabled .arc-slider-fill {
+.arc-disabled .arc-slider-fill {
     background-color: #A7A8AC;
 }
 
-.arc-slider-disabled .arc-slider-bar {
+.arc-disabled .arc-slider-bar {
     background-color: #E9EAEB;
 }
 
-.arc-slider-disabled .arc-slider-handle {
+.arc-disabled .arc-slider-handle {
     background-color: #F2F2F4;
     border-color: #C7C9D1;
 }
