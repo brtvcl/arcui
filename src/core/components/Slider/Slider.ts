@@ -96,16 +96,17 @@ export class Slider {
 				let sliderRect = container.getBoundingClientRect();
 				const width = sliderRect.width;
 				const left = sliderRect.left;
+
+				// Calculate value in given range of min max
+				const value = Math.min( Math.max(( (mousex - left) / (width - left) ) * (state.max - state.min) + state.min, state.min ), state.max );
+
+				setValue(value); //set value
 				
-				let x = mousex - left; //x p osition within the container.
-				let percentage = x*100/width; //0-100 value of slider
-				percentage = Math.min(Math.max(percentage, 0), 100); //Clamp percentage between 0-100
-				setValue(percentage); //set value
-				
+
 				//dispatch change event
 				instance.eventRegister.forEach((event) => {
 					if (event.type == "change") {
-						event.callback(percentage);
+						event.callback(value);
 					}
 				});
 				
@@ -154,13 +155,15 @@ export class Slider {
 			}
 
 
+			// Percentage is value adjusted to 0-100 for styling
+			const percentage = ((value - state.min) * 100) / (state.max - state.min)
 
 			return h("div", { class: containerClassList.join(" "), ref: containerRef }, [
 				state.label ? h("label", { class: "arc-slider-label" }, state.label) : null,
 				h("div", { class: "arc-slider", onMouseDown:handleDragStart}, [
 					h("div", { class: "arc-slider-bar" }, [
-						h("div", { class: "arc-slider-fill", style:{ width: `${value}%` }}),
-						h("div", { class: "arc-slider-handle", style:{ left: `${value}%`  }}),
+						h("div", { class: "arc-slider-fill", style:{ width: `${percentage}%` }}),
+						h("div", { class: "arc-slider-handle", style:{ left: `${percentage}%`  }}),
 					])
 				]),
 				state.info ? h("div", { class: "arc-info" }, state.info) : null,
