@@ -3,6 +3,7 @@ import type { SliderState } from "./types";
 import { h, render, createElement } from "preact";
 import { useEffect, useState, useRef } from "preact/hooks";
 import { randomRange } from "../../utils/randomRange";
+import { getClosest } from "../../utils/getClosest";
 
 export class Slider {
 	constructor(props: Partial<SliderState>, element: HTMLDivElement) {
@@ -23,7 +24,8 @@ export class Slider {
 		min: 0,
 		size: "medium",
 		status: "default",
-		value: 0
+		value: 0,
+		range: false
 	};
 
 	on(type: "change", calback: (value: number)=>void):number;
@@ -98,15 +100,28 @@ export class Slider {
 				const left = sliderRect.left;
 
 				// Calculate value in given range of min max
-				const value = Math.min( Math.max(( (mousex - left) / (width - left) ) * (state.max - state.min) + state.min, state.min ), state.max );
+				let clickedValue = Math.min( Math.max(( (mousex - left) / (width - left) ) * (state.max - state.min) + state.min, state.min ), state.max );
+				let updatedValue : number | [number, number];
 
-				setValue(value); //set value
+				
+				if (state.range && typeof value == "object") {
+					const {index} = getClosest(value, clickedValue);
+					updatedValue = [...value];
+
+					// Update that is clicked closest to
+					updatedValue[index] = clickedValue;
+
+					setValue(updatedValue);
+				} else {
+					updatedValue = clickedValue;
+					setValue(updatedValue); //set value
+				}
 				
 
 				//dispatch change event
 				instance.eventRegister.forEach((event) => {
 					if (event.type == "change") {
-						event.callback(value);
+						event.callback(updatedValue);
 					}
 				});
 				
@@ -155,15 +170,34 @@ export class Slider {
 			}
 
 
-			// Percentage is value adjusted to 0-100 for styling
-			const percentage = ((value - state.min) * 100) / (state.max - state.min)
+			
+
+			let fillStyle = {};
+			let percentage: [number, number] = [0, 0];
+			// When slider is normal slider
+			if (!state.range && typeof value == "number" ) {
+				console.log(value);
+				// Percentage is value adjusted to 0-100 for styling
+				percentage[0] = ((value - state.min) * 100) / (state.max - state.min);
+				fillStyle = { width: `${percentage[0]}%` };
+			} else if (typeof value == "object") {
+				const width = value[1] - value[0];
+				const left = value[0];
+
+				percentage[0] = left;
+				percentage[1] = width + left;
+				// When slider is range slider
+				fillStyle = { width: `${width}%`, left: `${left}%` };
+				// Percentage is value adjusted to 0-100 for styling
+			}
 
 			return h("div", { class: containerClassList.join(" "), ref: containerRef }, [
 				state.label ? h("label", { class: "arc-slider-label" }, state.label) : null,
 				h("div", { class: "arc-slider", onMouseDown:handleDragStart}, [
 					h("div", { class: "arc-slider-bar" }, [
-						h("div", { class: "arc-slider-fill", style:{ width: `${percentage}%` }}),
-						h("div", { class: "arc-slider-handle", style:{ left: `${percentage}%`  }}),
+						h("div", { class: "arc-slider-fill", style: fillStyle}),
+						h("div", { class: "arc-slider-handle arc-slider-handle-start", style:{ left: `${percentage[0]}%`  }}),
+						state.range ? h("div", { class: "arc-slider-handle arc-slider-handle-end", style:{ left: `${percentage[1]}%`  }}) : null
 					])
 				]),
 				state.info ? h("div", { class: "arc-info" }, state.info) : null,

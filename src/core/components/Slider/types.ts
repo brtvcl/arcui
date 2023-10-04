@@ -4,13 +4,14 @@ export type SliderState = {
 	id: string;
 	name: string;
 	disabled: boolean;
-	value: number;
+	value: number | [number, number];
 	min: number;
 	max: number;
 	label: string;
 	info: string;
 	status: ArcStatus;
 	size: ArcSize;
+	range: boolean;
 };
 
 export type SliderEventRecord = {
