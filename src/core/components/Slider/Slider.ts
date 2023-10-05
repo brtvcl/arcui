@@ -1,5 +1,5 @@
 import type { EventRecord } from "../../shared/types";
-import type { SliderState } from "./types";
+import type { SliderHandle, SliderState } from "./types";
 import { h, render, createElement } from "preact";
 import { useEffect, useState, useRef } from "preact/hooks";
 import { randomRange } from "../../utils/randomRange";
@@ -63,6 +63,7 @@ export class Slider {
 
 			const [isDragging, setIsDragging] = useState(false);
 			const [value, setValue] = useState(state.value);
+			const draggingHandle = useRef<SliderHandle>("start"); // We need to know which handle started the dragging we keep this in a mutable ref object 
 
 			//Reference to slider container
 			const containerRef = useRef(null);
@@ -92,9 +93,8 @@ export class Slider {
 
 			//Function to move value and calculcate percentage based on mouse position
 			function moveValue(mousex: number) {
-				const container = <HTMLDivElement><unknown>containerRef.current;
-
 				//Get dimensions of slider
+				const container = <HTMLDivElement><unknown>containerRef.current;
 				let sliderRect = container.getBoundingClientRect();
 				const width = sliderRect.width;
 				const left = sliderRect.left;
@@ -104,12 +104,33 @@ export class Slider {
 				let updatedValue : number | [number, number];
 
 				
-				if (state.range && typeof value == "object") {
-					const {index} = getClosest(value, clickedValue);
+				if (state.range && Array.isArray(value)) {
+					
 					updatedValue = [...value];
 
+					const handleIndexMap = {
+						"start": 0,
+						"end": 1
+					};
+
+					const updadatedHandle = handleIndexMap[draggingHandle.current];
+					
+
 					// Update that is clicked closest to
-					updatedValue[index] = clickedValue;
+					updatedValue[updadatedHandle] = clickedValue;
+
+					// // If start is larger than end switch moving handle
+					// if (updatedValue[0] > updatedValue[1]) {
+					// 	if (draggingHandle.current == "start") {
+					// 		draggingHandle.current = "end";
+					// 	} else {
+					// 		draggingHandle.current = "start"
+					// 	};
+
+					// 	const tmp = updatedValue[0];
+					// 	updatedValue[1] = updatedValue[0];
+					// 	updatedValue[0] = tmp;
+					// }
 
 					setValue(updatedValue);
 				} else {
@@ -141,6 +162,46 @@ export class Slider {
 				}
 			};
 
+			
+
+			function handleDragStart(e: MouseEvent) {
+				if (state.disabled) {
+					return;
+				}
+
+				let clickedHandle: SliderHandle = "start";
+
+				// If range slider determine which handle should move
+				if (Array.isArray(value)) {
+					const mousex = e.clientX;
+					//Get dimensions of slider
+					const container = <HTMLDivElement><unknown>containerRef.current;
+					let sliderRect = container.getBoundingClientRect();
+					const width = sliderRect.width;
+					const left = sliderRect.left;
+					let clickedValue = Math.min( Math.max(( (mousex - left) / (width - left) ) * (state.max - state.min) + state.min, state.min ), state.max );
+					const {index} = getClosest(value, clickedValue);
+					const handles: [SliderHandle, SliderHandle] = ["start", "end"];
+					clickedHandle = handles[index];
+					draggingHandle.current = clickedHandle;
+				} else {
+					// If default slider start handle should move
+					draggingHandle.current = "start";
+				}
+
+
+
+				//Move value once for when just clicking and not dragging
+				moveValue(e.clientX);
+				
+
+				
+				//Set dragging true until mouse is up
+				setIsDragging(true);
+			}
+
+			function passClickedHandle() {}
+
 			useEffect(() => {
 
 				//End dragging when mouse is up
@@ -155,19 +216,7 @@ export class Slider {
 					window.removeEventListener("mousemove", handleDragMove);
 				}
 
-			}, [isDragging])
-
-			function handleDragStart(e: MouseEvent) {
-				if (state.disabled) {
-					return;
-				}
-
-				//Move value once for when just clicking and not dragging
-				moveValue(e.clientX);
-
-				//Set dragging true until mouse is up
-				setIsDragging(true);
-			}
+			}, [isDragging, draggingHandle]);
 
 
 			
@@ -176,7 +225,6 @@ export class Slider {
 			let percentage: [number, number] = [0, 0];
 			// When slider is normal slider
 			if (!state.range && typeof value == "number" ) {
-				console.log(value);
 				// Percentage is value adjusted to 0-100 for styling
 				percentage[0] = ((value - state.min) * 100) / (state.max - state.min);
 				fillStyle = { width: `${percentage[0]}%` };

@@ -19,3 +19,5 @@ export type SliderEventRecord = {
 	type: string;
 	callback: Function;
 };
+
+export type SliderHandle = "start" | "end"
