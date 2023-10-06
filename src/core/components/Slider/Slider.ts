@@ -106,18 +106,35 @@ export class Slider {
 				
 				if (state.range && Array.isArray(value)) {
 					
-					updatedValue = [...value];
-
-					const handleIndexMap = {
-						"start": 0,
-						"end": 1
-					};
-
-					const updadatedHandle = handleIndexMap[draggingHandle.current];
 					
+					setValue((prev) => {
+						const updatedValue: [number, number] = [...<[number, number]>prev];
+						const handleIndexMap = {
+							"start": 0,
+							"end": 1
+						};
+	
+						const updadatedHandle = handleIndexMap[draggingHandle.current];
 
-					// Update that is clicked closest to
-					updatedValue[updadatedHandle] = clickedValue;
+						// Update that is clicked closest to
+						updatedValue[updadatedHandle] = clickedValue;
+
+						// If start is larger than end switch moving handle
+						if (updatedValue[0] > updatedValue[1]) {
+							if (draggingHandle.current == "start") {
+								draggingHandle.current = "end";
+							} else {
+								draggingHandle.current = "start"
+							};
+
+							const tmp = updatedValue[0];
+							updatedValue[1] = updatedValue[0];
+							updatedValue[0] = tmp;
+						}
+						
+						return updatedValue;
+					})
+					
 
 					// // If start is larger than end switch moving handle
 					// if (updatedValue[0] > updatedValue[1]) {
@@ -132,7 +149,7 @@ export class Slider {
 					// 	updatedValue[0] = tmp;
 					// }
 
-					setValue(updatedValue);
+					// setValue(updatedValue);
 				} else {
 					updatedValue = clickedValue;
 					setValue(updatedValue); //set value
