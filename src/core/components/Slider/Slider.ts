@@ -108,6 +108,7 @@ export class Slider {
 					
 					
 					setValue((prev) => {
+						
 						const updatedValue: [number, number] = [...<[number, number]>prev];
 						const handleIndexMap = {
 							"start": 0,
@@ -123,33 +124,20 @@ export class Slider {
 						if (updatedValue[0] > updatedValue[1]) {
 							if (draggingHandle.current == "start") {
 								draggingHandle.current = "end";
+								const tmp = updatedValue[0];
+								updatedValue[0] = updatedValue[1];
+								updatedValue[1] = tmp;
 							} else {
-								draggingHandle.current = "start"
+								draggingHandle.current = "start";
+								const tmp = updatedValue[1];
+								updatedValue[1] = updatedValue[0];
+								updatedValue[0] = tmp;
 							};
-
-							const tmp = updatedValue[0];
-							updatedValue[1] = updatedValue[0];
-							updatedValue[0] = tmp;
+							
 						}
 						
 						return updatedValue;
-					})
-					
-
-					// // If start is larger than end switch moving handle
-					// if (updatedValue[0] > updatedValue[1]) {
-					// 	if (draggingHandle.current == "start") {
-					// 		draggingHandle.current = "end";
-					// 	} else {
-					// 		draggingHandle.current = "start"
-					// 	};
-
-					// 	const tmp = updatedValue[0];
-					// 	updatedValue[1] = updatedValue[0];
-					// 	updatedValue[0] = tmp;
-					// }
-
-					// setValue(updatedValue);
+					});
 				} else {
 					updatedValue = clickedValue;
 					setValue(updatedValue); //set value
