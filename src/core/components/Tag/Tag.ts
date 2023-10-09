@@ -12,7 +12,8 @@ export class Tag {
 	private element: HTMLDivElement;
 	private eventRegister: Array<EventRecord> = [];
 	private state: TagState = {
-        variant: "primary"
+        variant: "primary",
+		children: ""
 	};
 
 
@@ -32,7 +33,15 @@ export class Tag {
 
 		function createComponent() {
 
-			return h("div", { }, []);
+			const containerClassList:Array<string> = ["arc", "arc-tag"];
+
+			if (state.variant == "primary") {
+				containerClassList.push("arc-tag-primary");
+			}
+
+			
+
+			return h("div", { class: containerClassList.join(" "), dangerouslySetInnerHTML: { __html: state.children} }, []);
 		}
 
 		let preactEl = createElement(createComponent, state);
