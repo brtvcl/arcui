@@ -35,12 +35,8 @@ export class Tag {
 
 			const containerClassList:Array<string> = ["arc", "arc-tag"];
 
-			if (state.variant == "primary") {
-				containerClassList.push("arc-tag-primary");
-			}
-
+			containerClassList.push(`arc-tag-${state.variant}`);
 			
-
 			return h("div", { class: containerClassList.join(" "), dangerouslySetInnerHTML: { __html: state.children} }, []);
 		}
 
