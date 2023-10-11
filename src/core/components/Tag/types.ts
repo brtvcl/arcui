@@ -1,6 +1,6 @@
 import { ArcStatus } from "../../shared/types"
 
 export type TagState = {
-    variant: "primary" | "warning" | "error" | "neutral",
+    variant: "primary" | "neutral" | "success" | "warning" | "error" | "purple" | "teal" | "orange",
     children: string
 }
