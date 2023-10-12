@@ -1,4 +1,4 @@
-type TabKey = string | number;
+export type TabKey = string | number;
 
 type TabsItem = {
     key: TabKey;

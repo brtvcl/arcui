@@ -7,3 +7,4 @@ export { ComboBox } from "./core/components/ComboBox/ComboBox";
 export { Select } from "./core/components/Select/Select";
 export { Slider } from "./core/components/Slider/Slider";
 export { Tag } from "./core/components/Tag/Tag";
+export { Tabs } from "./core/components/Tabs/Tabs";

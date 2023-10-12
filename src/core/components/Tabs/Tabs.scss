@@ -1,0 +1,20 @@
+.arc-tabs-nav {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    display: flex;
+    border-bottom: 1px solid #ACAFBA;
+}
+
+.arc-tab {
+    padding: 0 1rem 1.5rem 1rem;
+    cursor: pointer;
+}
+
+.arc-tab-active {
+    border-bottom: 3px solid #0053FE;
+}
+
+.arc-tab-active .arc-tab-label {
+    color: #0053FE;
+    text-shadow: 0.5px 0 0 currentColor, 0.5px 0 0 currentColor;
+}
