@@ -12,6 +12,6 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@brtvcl/arcui": "^1.0.2"
+    "@brtvcl/arcui": "^1.0.3"
   }
 }

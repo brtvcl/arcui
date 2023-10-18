@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Docs - Button Component</title>
+    <link rel="stylesheet" href="/css/margin-utils.css">
 </head>
 <body>
     <h1>Button Component</h1>
@@ -11,163 +12,62 @@
     <div>
         <h3>Primary Button</h3>
         <div id="primary-button"></div>
-        <div style="margin-top: 2rem;" id="primary-button-code"></div>
+        <div class="mt-2" id="primary-button-code"></div>
     </div>
     <div>
         <h3>Secondary Button</h3>
         <div id="secondary-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Secondary',
-                    width: '200px'
-                }, document.getElementById('secondary-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="secondary-button-code"></div>
     </div>
     <div>
         <h3>Outline Button</h3>
         <div id="outline-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'outline',
-                    text: 'Outline',
-                    width: '200px'
-                }, document.getElementById('outline-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="outline-button-code"></div>
     </div>
     <div>
         <h3>Ghost Button</h3>
         <div id="ghost-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'ghost',
-                    text: 'Ghost',
-                    width: '200px'
-                }, document.getElementById('ghost-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="ghost-button-code"></div>
     </div>
 
     <h2>Status</h2>
     <div>
         <h3>Disabled Button</h3>
         <div id="disabled-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Disabled',
-                    width: '200px'
-                    disabled: true,
-                }, document.getElementById('disabled-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="disabled-button-code"></div>
     </div>
     <div>
         <h3>Loading Button</h3>
         <div id="loading-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
+        <div class="mt-2" id="loading-button-code"></div>
 
-                new Button({
-                    variant: 'secondary',
-                    text: 'Loading',
-                    width: '200px'
-                    loading: true,
-                }, document.getElementById('loading-button'));
-            </code>
-        </pre>
     </div>
 
     <h2>Size</h2>
     <div>
         <h3>Small Button</h3>
         <div id="small-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Small',
-                    width: '150px',
-                    size: 'small'
-                }, document.getElementById('small-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="small-button-code"></div>
     </div>
 
     <div>
         <h3>Large Button</h3>
         <div id="large-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Large',
-                    width: '150px',
-                    size: 'large'
-                }, document.getElementById('large-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="large-button-code"></div>
     </div>
     
     <h2>Icon</h2>
     <div>
         <h3>Icon Button</h3>
         <div id="icon-button"></div>
-        <pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'outline',
-                    text: 'Icon',
-                    width: '150px',
-                    icon: '🚀'
-                }, document.getElementById('icon-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="icon-button-code"></div>
     </div>
     <div>
         <h3>Square Button</h3>
         <p>Square button only works with icon</p>
         <div id="square-button"></div>
-        <pre>
-            <code>
-                new Button({
-                    variant: 'outline',
-                    text: 'Icon',
-                    width: '150px',
-                    icon: '🗑️       ',
-                    square: true,
-                }, document.getElementById('square-button'));
-            </code>
-        </pre>
+        <div class="mt-2" id="square-button-code"></div>
+        
     </div>
 
     <h2>Props</h2>
