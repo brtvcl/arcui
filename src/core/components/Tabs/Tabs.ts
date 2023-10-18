@@ -59,7 +59,7 @@ export class Tabs {
 						}
 
 						return h("div", { class: itemClassList.join(" "), key: item.key, onClick: ()=>{handleActiveKey(item.key)} }, [
-							h("div", { class: "arc-tab-label" }, item.label),
+							h("div", { class: "arc-tab-label", dangerouslySetInnerHTML: {__html: item.label} }),
 						]);
 					})
 				]),
