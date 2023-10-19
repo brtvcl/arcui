@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@brtvcl/arcui": "^1.0.3"
+    "@brtvcl/arcui": "^1.0.3",
+    "prismjs": "^1.29.0"
   }
 }

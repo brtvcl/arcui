@@ -3,6 +3,15 @@ import {
 } from '@brtvcl/arcui';
 import '@brtvcl/arcui/dist/bundle.css';
 
+import Prism from "prismjs";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-jsx";
+import "prismjs/themes/prism.min.css";
+
+
+function highlightJsCode(code, language) {
+    return `<pre><code>${Prism.highlight(code, Prism.languages[language], language)}</code></pre>`;
+}
 
 // Primary Button
 new Button({
@@ -11,37 +20,36 @@ new Button({
     width: '200px'
 }, document.getElementById('primary-button'));
 
+const primaryButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'primary',
+        text: 'Primary',
+        width: '200px'
+    }, document.getElementById('primary-button'));`;
+
+
+const primaryButtonReactCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    <Button variant="primary" width="200px">
+        Primary
+    <Button>`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'primary',
-                    text: 'Primary',
-                    width: '200px'
-                }, document.getElementById('primary-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(primaryButtonJsCode, "javascript"),
         },
         {
             key: "react",
             label: `<img width="32" src="/img/react.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                &lt;Button variant="primary" width="200px">
-                    Primary
-                &lt;/Button&gt;
-            </code>
-        </pre>`
+            children: highlightJsCode(primaryButtonReactCode, "jsx"),
         }
     ]
 }, document.getElementById("primary-button-code"));
