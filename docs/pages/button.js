@@ -30,7 +30,6 @@ const primaryButtonJsCode = `
         width: '200px'
     }, document.getElementById('primary-button'));`;
 
-
 const primaryButtonReactCode = `
     import { Button } from '@brtvcl/arcui';
     import '@brtvcl/arcui/dist/bundle.css';
@@ -43,12 +42,12 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(primaryButtonJsCode, "javascript"),
         },
         {
             key: "react",
-            label: `<img width="32" src="/img/react.svg"/>`,
+            label: `<img width="24" src="/img/react.svg"/>`,
             children: highlightJsCode(primaryButtonReactCode, "jsx"),
         }
     ]
@@ -61,23 +60,22 @@ new Button({
     width: '200px',
 }, document.getElementById('secondary-button'));
 
+const secondaryButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'secondary',
+        text: 'Secondary',
+        width: '200px'
+    }, document.getElementById('secondary-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Secondary',
-                    width: '200px'
-                }, document.getElementById('secondary-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(secondaryButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("secondary-button-code"));
@@ -89,23 +87,22 @@ new Button({
     width: '200px',
 }, document.getElementById('outline-button'));
 
+const outlineButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'outline',
+        text: 'Outline',
+        width: '200px'
+    }, document.getElementById('outline-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'outline',
-                    text: 'Outline',
-                    width: '200px'
-                }, document.getElementById('outline-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(outlineButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("outline-button-code"));
@@ -117,23 +114,22 @@ new Button({
     width: '200px',
 }, document.getElementById('ghost-button'));
 
+const ghostButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'ghost',
+        text: 'Ghost',
+        width: '200px'
+    }, document.getElementById('ghost-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'ghost',
-                    text: 'Ghost',
-                    width: '200px'
-                }, document.getElementById('ghost-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(ghostButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("ghost-button-code"));
@@ -146,24 +142,23 @@ new Button({
     disabled: true
 }, document.getElementById('disabled-button'));
 
+const disabledButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'secondary',
+        text: 'Disabled',
+        width: '200px'
+        disabled: true,
+    }, document.getElementById('disabled-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-                <code>
-                    import { Button } from '@brtvcl/arcui';
-                    import '@brtvcl/arcui/dist/bundle.css';
-    
-                    new Button({
-                        variant: 'secondary',
-                        text: 'Disabled',
-                        width: '200px'
-                        disabled: true,
-                    }, document.getElementById('disabled-button'));
-                </code>
-            </pre>`
+            children: highlightJsCode(disabledButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("disabled-button-code"));
@@ -176,24 +171,23 @@ new Button({
     loading: true,
 }, document.getElementById('loading-button'));
 
+const loadingButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'secondary',
+        text: 'Loading',
+        width: '200px'
+        loading: true,
+    }, document.getElementById('loading-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Loading',
-                    width: '200px'
-                    loading: true,
-                }, document.getElementById('loading-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(loadingButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("loading-button-code"));
@@ -206,24 +200,23 @@ new Button({
     size: 'small'
 }, document.getElementById('small-button'));
 
+const smallButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'secondary',
+        text: 'Small',
+        width: '150px',
+        size: 'small'
+    }, document.getElementById('small-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Small',
-                    width: '150px',
-                    size: 'small'
-                }, document.getElementById('small-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(smallButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("small-button-code"));
@@ -236,24 +229,23 @@ new Button({
     size: 'large',
 }, document.getElementById('large-button'));
 
+const largeButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'secondary',
+        text: 'Large',
+        width: '150px',
+        size: 'large'
+    }, document.getElementById('large-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'secondary',
-                    text: 'Large',
-                    width: '150px',
-                    size: 'large'
-                }, document.getElementById('large-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(largeButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("large-button-code"));
@@ -266,24 +258,23 @@ new Button({
     icon: '🚀'
 }, document.getElementById('icon-button'));
 
+const iconButtonJsCode = `
+    import { Button } from '@brtvcl/arcui';
+    import '@brtvcl/arcui/dist/bundle.css';
+
+    new Button({
+        variant: 'outline',
+        text: 'Icon',
+        width: '150px',
+        icon: '🚀'
+    }, document.getElementById('icon-button'));`
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                import { Button } from '@brtvcl/arcui';
-                import '@brtvcl/arcui/dist/bundle.css';
-
-                new Button({
-                    variant: 'outline',
-                    text: 'Icon',
-                    width: '150px',
-                    icon: '🚀'
-                }, document.getElementById('icon-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(iconButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("icon-button-code"));
@@ -297,22 +288,21 @@ new Button({
     square: true,
 }, document.getElementById('square-button'));
 
+const squareButtonJsCode = `
+    new Button({
+        variant: 'outline',
+        text: 'Icon',
+        width: '150px',
+        icon: '🗑️       ',
+        square: true,
+    }, document.getElementById('square-button'));`;
+
 new Tabs({
     items: [
         {
             key: "vanilla",
             label: `<img width="32" src="/img/js.svg"/>`,
-            children: `<pre>
-            <code>
-                new Button({
-                    variant: 'outline',
-                    text: 'Icon',
-                    width: '150px',
-                    icon: '🗑️       ',
-                    square: true,
-                }, document.getElementById('square-button'));
-            </code>
-        </pre>`
+            children: highlightJsCode(squareButtonJsCode, "javascript")
         },
     ]
 }, document.getElementById("square-button-code"));
