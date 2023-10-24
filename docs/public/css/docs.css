@@ -26,6 +26,19 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.view {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    flex: 0 1 200px;
+}
+
+.index {
+    flex: 0 1 300px;
+}
+
 .table {
     border-top: 1px solid #A7A8AC;
     border-collapse: collapse;

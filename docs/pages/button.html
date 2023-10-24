@@ -8,233 +8,303 @@
     <link rel="stylesheet" href="/css/docs.css">
 </head>
 <body>
-    <h1>Button Component</h1>
-    <p>
-        The Arc UI provides a flexible and customizable button component for use in web applications.
-    </p>
-    <h2>Variants</h2>
-    <p>
-        The button component supports different visual styles, including <span class="code">primary</span>, <span class="code">secondary</span>, <span class="code">outline</span>, and <span class="code">ghost</span>.
-    </p>
-    <div>
-        <h3>Primary Button</h3>
-        <div id="primary-button"></div>
-        <div class="mt-2" id="primary-button-code"></div>
-    </div>
-    <div>
-        <h3>Secondary Button</h3>
-        <div id="secondary-button"></div>
-        <div class="mt-2" id="secondary-button-code"></div>
-    </div>
-    <div>
-        <h3>Outline Button</h3>
-        <div id="outline-button"></div>
-        <div class="mt-2" id="outline-button-code"></div>
-    </div>
-    <div>
-        <h3>Ghost Button</h3>
-        <div id="ghost-button"></div>
-        <div class="mt-2" id="ghost-button-code"></div>
-    </div>
-
-    <h2>Status</h2>
-    <p>
-        Buttons can have different states, including <span class="code">disabled</span> and <span class="code">loading</span>.
-    </p>
-    <div>
-        <h3>Disabled Button</h3>
-        <div id="disabled-button"></div>
-        <div class="mt-2" id="disabled-button-code"></div>
-    </div>
-    <div>
-        <h3>Loading Button</h3>
-        <div id="loading-button"></div>
-        <div class="mt-2" id="loading-button-code"></div>
-
-    </div>
-
-    <h2>Size</h2>
-    <p>
-        Buttons can be sized as <span class="code">small</span>, <span class="code">medium</span> (default), or <span class="code">large</span>.
-    </p>
-    <div>
-        <h3>Small Button</h3>
-        <div id="small-button"></div>
-        <div class="mt-2" id="small-button-code"></div>
-    </div>
-
-    <div>
-        <h3>Large Button</h3>
-        <div id="large-button"></div>
-        <div class="mt-2" id="large-button-code"></div>
+    <div class="view">
+        <div class="sidebar">
+            <ul>
+                <li>link</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Button Component</h1>
+            <p>
+                The Arc UI provides a flexible and customizable button component for use in web applications.
+            </p>
+            <h2 id="variants">Variants</h2>
+            <p>
+                The button component supports different visual styles, including <span class="code">primary</span>, <span class="code">secondary</span>, <span class="code">outline</span>, and <span class="code">ghost</span>.
+            </p>
+            <div id="variants-primary">
+                <h3>Primary Button</h3>
+                <div id="primary-button"></div>
+                <div class="mt-2" id="primary-button-code"></div>
+            </div>
+            <div id="variants-secondary">
+                <h3>Secondary Button</h3>
+                <div id="secondary-button"></div>
+                <div class="mt-2" id="secondary-button-code"></div>
+            </div>
+            <div id="variants-outline">
+                <h3>Outline Button</h3>
+                <div id="outline-button"></div>
+                <div class="mt-2" id="outline-button-code"></div>
+            </div>
+            <div id="variants-ghost">
+                <h3>Ghost Button</h3>
+                <div id="ghost-button"></div>
+                <div class="mt-2" id="ghost-button-code"></div>
+            </div>
+    
+            <h2 id="status">Status</h2>
+            <p>
+                Buttons can have different states, including <span class="code">disabled</span> and <span class="code">loading</span>.
+            </p>
+            <div id="status-disabled">
+                <h3>Disabled Button</h3>
+                <div id="disabled-button"></div>
+                <div class="mt-2" id="disabled-button-code"></div>
+            </div>
+            <div id="status-loading">
+                <h3>Loading Button</h3>
+                <div id="loading-button"></div>
+                <div class="mt-2" id="loading-button-code"></div>
+    
+            </div>
+    
+            <h2 id="size">Size</h2>
+            <p>
+                Buttons can be sized as <span class="code">small</span>, <span class="code">medium</span> (default), or <span class="code">large</span>.
+            </p>
+            <div id="size-small">
+                <h3>Small Button</h3>
+                <div id="small-button"></div>
+                <div class="mt-2" id="small-button-code"></div>
+            </div>
+    
+            <div id="size-large">
+                <h3>Large Button</h3>
+                <div id="large-button"></div>
+                <div class="mt-2" id="large-button-code"></div>
+            </div>
+            
+            <h2 id="icon">Icon</h2>
+            <p>
+                Renders an icon within the button. This can be an html string. You can also make the button square.
+            </p>
+            <div id="icon-button">
+                <h3>Icon Button</h3>
+                <div id="icon-button"></div>
+                <div class="mt-2" id="icon-button-code"></div>
+            </div>
+            <div id="icon-square">
+                <h3>Square Button</h3>
+                <p>Square button only works with icon</p>
+                <div id="square-button"></div>
+                <div class="mt-2" id="square-button-code"></div>
+                
+            </div>
+    
+            <h2 id="props">Props</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Property
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                variant
+                            </span>
+                        </td>
+                        <td>Variant of button</td>
+                        <td>
+                            <span class="code">"primary"</span> | 
+                            <span class="code">"secondary"</span> | 
+                            <span class="code">"outline"</span> | 
+                            <span class="code">"ghost"</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                text
+                            </span>
+                        </td>
+                        <td>Inner text of button</td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                size
+                            </span>
+                        </td>
+                        <td>Size of button</td>
+                        <td>
+                            <span class="code">"small"</span> |
+                            <span class="code">"medium"</span> |
+                            <span class="code">"large"</span>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                width
+                            </span>
+                        </td>
+                        <td>CSS Width of button. "auto" for full width</td>
+                        <td>
+                            Css length as string e.g. 
+                            <span class="code">"200px"</span> | 
+                            <span class="code">"5rem"</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                disabled
+                            </span>
+                        </td>
+                        <td>Set button disabled</td>
+                        <td>
+                            <span class="code">boolean</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                loading
+                            </span>
+                        </td>
+                        <td>Set button loading</td>
+                        <td>
+                            <span class="code">boolean</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                square
+                            </span>
+                        </td>
+                        <td>Make button square</td>
+                        <td>
+                            <span class="code">boolean</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="monospace">
+                                icon
+                            </span>
+                        </td>
+                        <td>Put icon inside before text. Can be html string</td>
+                        <td>
+                            <span class="code">string</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <h2 id="events">Events</h2>
+            <div>
+                <table>
+                    <thead>
+                        <th>Event</th>
+                        <th>Params</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>click</td>
+                            <td></td>
+                            <td>Fired when button is clicked</td>
+                            <td>
+                                <pre>
+                                    <code>
+                                        const btn = new Button({
+                                            variant: 'primary',
+                                            text: 'Primary',
+                                            width: '200px'
+                                        }, document.getElementById('primary-button'));
+                                        
+                                        btn.on("click", () => {
+                                            console.log("clicked");
+                                        });
+    
+                                    </code>
+                                </pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <nav class="index">
+            <h5>Table of Contents</h5>
+            <ul>
+                <li>
+                    <a href="#variants">Variants</a>
+                    <ul>
+                        <li>
+                            <a href="#variants-primary">Primary Button</a>
+                        </li>
+                        <li>
+                            <a href="#variants-secondary">Secondary Button</a>
+                        </li>
+                        <li>
+                            <a href="#variants-outline">Outline Button</a>
+                        </li>
+                        <li>
+                            <a href="#variants-ghost">Ghost Button</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#status">Status</a>
+                    <ul>
+                        <li>
+                            <a href="#status-disabled">Disabled Button</a>
+                        </li>
+                        <li>
+                            <a href="#status-loading">Loading Button</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#size">Size</a>
+                    <ul>
+                        <li>
+                            <a href="#size-small">Small Button</a>
+                        </li>
+                        <li>
+                            <a href="#size-large">Large Button</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#icon">Icon</a>
+                    <ul>
+                        <li>
+                            <a href="#icon-button">Icon Button</a>
+                        </li>
+                        <li>
+                            <a href="#icon-square">Square Button</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#props">Props</a>
+                </li>
+                <li>
+                    <a href="#events">Events</a>
+                </li>
+            </ul>
+        </nav>
     </div>
     
-    <h2>Icon</h2>
-    <p>
-        Renders an icon within the button. This can be an html string. You can also make the button square.
-    </p>
-    <div>
-        <h3>Icon Button</h3>
-        <div id="icon-button"></div>
-        <div class="mt-2" id="icon-button-code"></div>
-    </div>
-    <div>
-        <h3>Square Button</h3>
-        <p>Square button only works with icon</p>
-        <div id="square-button"></div>
-        <div class="mt-2" id="square-button-code"></div>
-        
-    </div>
 
-    <h2>Props</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Property
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Type
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        variant
-                    </span>
-                </td>
-                <td>Variant of button</td>
-                <td>
-                    <span class="code">"primary"</span> | 
-                    <span class="code">"secondary"</span> | 
-                    <span class="code">"outline"</span> | 
-                    <span class="code">"ghost"</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        text
-                    </span>
-                </td>
-                <td>Inner text of button</td>
-                <td>
-                    <span class="code">string</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        size
-                    </span>
-                </td>
-                <td>Size of button</td>
-                <td>
-                    <span class="code">"small"</span> |
-                    <span class="code">"medium"</span> |
-                    <span class="code">"large"</span>
-            </tr>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        width
-                    </span>
-                </td>
-                <td>CSS Width of button. "auto" for full width</td>
-                <td>
-                    Css length as string e.g. 
-                    <span class="code">"200px"</span> | 
-                    <span class="code">"5rem"</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        disabled
-                    </span>
-                </td>
-                <td>Set button disabled</td>
-                <td>
-                    <span class="code">boolean</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        loading
-                    </span>
-                </td>
-                <td>Set button loading</td>
-                <td>
-                    <span class="code">boolean</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        square
-                    </span>
-                </td>
-                <td>Make button square</td>
-                <td>
-                    <span class="code">boolean</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="monospace">
-                        icon
-                    </span>
-                </td>
-                <td>Put icon inside before text. Can be html string</td>
-                <td>
-                    <span class="code">string</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>Events</h2>
-    <div>
-        <table>
-            <thead>
-                <th>Event</th>
-                <th>Params</th>
-                <th>Description</th>
-                <th>Example</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>click</td>
-                    <td></td>
-                    <td>Fired when button is clicked</td>
-                    <td>
-                        <pre>
-                            <code>
-                                const btn = new Button({
-                                    variant: 'primary',
-                                    text: 'Primary',
-                                    width: '200px'
-                                }, document.getElementById('primary-button'));
-                                
-                                btn.on("click", () => {
-                                    console.log("clicked");
-                                });
-
-                            </code>
-                        </pre>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    
     <script type="module" src="./button.js"></script>
 </body>
 </html>
