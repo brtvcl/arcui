@@ -37,6 +37,52 @@ body {
 
 .index {
     flex: 0 1 300px;
+    box-sizing: border-box;
+    padding-right: 4rem;
+}
+
+.index * {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.index h4 {
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
+
+.index hr {
+    margin-left: 1rem;
+}
+
+.index ul {
+    padding-inline-start: 0;
+}
+
+.index ul ul {
+    padding-inline-start: 2rem;
+}
+
+.index li {
+    list-style-type: none;
+}
+
+.index li a:hover {
+    color:#0053fe
+}
+
+.index a {
+    text-decoration: none;
+    color: #ACAFBA;
+    display: block;
+}
+
+.toc-link {
+    border: 1px solid transparent;
+    padding-left: 1rem;
+}
+
+.toc-link:hover {
+    border-left: 1px solid #0053fe;
 }
 
 .table {
