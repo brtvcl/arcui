@@ -74,7 +74,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(secondaryButtonJsCode, "javascript")
         },
     ]
@@ -101,7 +101,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(outlineButtonJsCode, "javascript")
         },
     ]
@@ -128,7 +128,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(ghostButtonJsCode, "javascript")
         },
     ]
@@ -157,7 +157,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(disabledButtonJsCode, "javascript")
         },
     ]
@@ -186,7 +186,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(loadingButtonJsCode, "javascript")
         },
     ]
@@ -215,7 +215,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(smallButtonJsCode, "javascript")
         },
     ]
@@ -244,7 +244,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(largeButtonJsCode, "javascript")
         },
     ]
@@ -273,7 +273,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(iconButtonJsCode, "javascript")
         },
     ]
@@ -301,7 +301,7 @@ new Tabs({
     items: [
         {
             key: "vanilla",
-            label: `<img width="32" src="/img/js.svg"/>`,
+            label: `<img width="24" src="/img/js.svg"/>`,
             children: highlightJsCode(squareButtonJsCode, "javascript")
         },
     ]
