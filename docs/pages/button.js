@@ -267,7 +267,7 @@ const iconButtonJsCode = `
         text: 'Icon',
         width: '150px',
         icon: '🚀'
-    }, document.getElementById('icon-button'));`
+    }, document.getElementById('icon-button'));`;
 
 new Tabs({
     items: [
@@ -284,7 +284,7 @@ new Button({
     variant: 'outline',
     text: 'Icon',
     width: '150px',
-    icon: '🗑️       ',
+    icon: '🗑️',
     square: true,
 }, document.getElementById('square-button'));
 
@@ -293,7 +293,7 @@ const squareButtonJsCode = `
         variant: 'outline',
         text: 'Icon',
         width: '150px',
-        icon: '🗑️       ',
+        icon: '🗑️',
         square: true,
     }, document.getElementById('square-button'));`;
 

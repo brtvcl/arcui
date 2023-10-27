@@ -23,76 +23,110 @@
             <p>
                 The button component supports different visual styles, including <span class="code">primary</span>, <span class="code">secondary</span>, <span class="code">outline</span>, and <span class="code">ghost</span>.
             </p>
-            <div id="variants-primary">
-                <h3>Primary Button</h3>
-                <div id="primary-button"></div>
-                <div class="mt-2" id="primary-button-code"></div>
+            <div class="row">
+                <div class="col">
+                    <div id="variants-primary">
+                        <h3>Primary Button</h3>
+                        <div id="primary-button"></div>
+                        <div class="mt-2" id="primary-button-code"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="variants-secondary">
+                        <h3>Secondary Button</h3>
+                        <div id="secondary-button"></div>
+                        <div class="mt-2" id="secondary-button-code"></div>
+                    </div>
+                </div>
             </div>
-            <div id="variants-secondary">
-                <h3>Secondary Button</h3>
-                <div id="secondary-button"></div>
-                <div class="mt-2" id="secondary-button-code"></div>
+            <div class="row">
+                <div class="col">
+                    <div id="variants-outline">
+                        <h3>Outline Button</h3>
+                        <div id="outline-button"></div>
+                        <div class="mt-2" id="outline-button-code"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="variants-ghost">
+                        <h3>Ghost Button</h3>
+                        <div id="ghost-button"></div>
+                        <div class="mt-2" id="ghost-button-code"></div>
+                    </div>
+                </div>
             </div>
-            <div id="variants-outline">
-                <h3>Outline Button</h3>
-                <div id="outline-button"></div>
-                <div class="mt-2" id="outline-button-code"></div>
-            </div>
-            <div id="variants-ghost">
-                <h3>Ghost Button</h3>
-                <div id="ghost-button"></div>
-                <div class="mt-2" id="ghost-button-code"></div>
-            </div>
+            
+        
     
             <h2 id="status">Status</h2>
             <p>
                 Buttons can have different states, including <span class="code">disabled</span> and <span class="code">loading</span>.
             </p>
-            <div id="status-disabled">
-                <h3>Disabled Button</h3>
-                <div id="disabled-button"></div>
-                <div class="mt-2" id="disabled-button-code"></div>
+            <div class="row">
+                <div class="col">
+                    <div id="status-disabled">
+                        <h3>Disabled Button</h3>
+                        <div id="disabled-button"></div>
+                        <div class="mt-2" id="disabled-button-code"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="status-loading">
+                        <h3>Loading Button</h3>
+                        <div id="loading-button"></div>
+                        <div class="mt-2" id="loading-button-code"></div>
+                    </div>
+                </div>
             </div>
-            <div id="status-loading">
-                <h3>Loading Button</h3>
-                <div id="loading-button"></div>
-                <div class="mt-2" id="loading-button-code"></div>
-    
-            </div>
+            
+            
     
             <h2 id="size">Size</h2>
             <p>
                 Buttons can be sized as <span class="code">small</span>, <span class="code">medium</span> (default), or <span class="code">large</span>.
             </p>
-            <div id="size-small">
-                <h3>Small Button</h3>
-                <div id="small-button"></div>
-                <div class="mt-2" id="small-button-code"></div>
+            <div class="row">
+                <div class="col">
+                    <div id="size-small">
+                        <h3>Small Button</h3>
+                        <div id="small-button"></div>
+                        <div class="mt-2" id="small-button-code"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="size-large">
+                        <h3>Large Button</h3>
+                        <div id="large-button"></div>
+                        <div class="mt-2" id="large-button-code"></div>
+                    </div>
+                </div>
             </div>
+            
     
-            <div id="size-large">
-                <h3>Large Button</h3>
-                <div id="large-button"></div>
-                <div class="mt-2" id="large-button-code"></div>
-            </div>
+            
             
             <h2 id="icon">Icon</h2>
             <p>
                 Renders an icon within the button. This can be an html string. You can also make the button square.
             </p>
-            <div id="icon-button">
-                <h3>Icon Button</h3>
-                <div id="icon-button"></div>
-                <div class="mt-2" id="icon-button-code"></div>
+            <div class="row">
+                <div class="col">
+                    <div id="icon-prop-button">
+                        <h3>Icon Button</h3>
+                        <div id="icon-button"></div>
+                        <div class="mt-2" id="icon-button-code"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="icon-prop-square">
+                        <h3>Square Button</h3>
+                        <p>Square button only works with icon</p>
+                        <div id="square-button"></div>
+                        <div class="mt-2" id="square-button-code"></div>           
+                    </div>
+                </div>
             </div>
-            <div id="icon-square">
-                <h3>Square Button</h3>
-                <p>Square button only works with icon</p>
-                <div id="square-button"></div>
-                <div class="mt-2" id="square-button-code"></div>
-                
-            </div>
-    
+            
             <h2 id="props">Props</h2>
             <table class="table">
                 <thead>
@@ -289,10 +323,10 @@
                         <a class="toc-link" href="#icon">Icon</a>
                         <ul>
                             <li>
-                                <a class="toc-link" href="#icon-button">Icon Button</a>
+                                <a class="toc-link" href="#icon-prop-button">Icon Button</a>
                             </li>
                             <li>
-                                <a class="toc-link" href="#icon-square">Square Button</a>
+                                <a class="toc-link" href="#icon-prop-square">Square Button</a>
                             </li>
                         </ul>
                     </li>

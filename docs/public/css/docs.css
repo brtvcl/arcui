@@ -15,12 +15,13 @@ h1 {
 h2  {
    font-size: 28px;
    font-weight: 500; 
+   margin-top: 2rem;
 }
 
 h3 {
     font-size: 22px;
     font-weight: 500;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 body {
@@ -128,4 +129,14 @@ body {
     background-color: #E3E4E8;
     padding: 0.25rem;
     border-radius: 0.25rem;
+}
+
+.row {
+    display: flex;
+    gap: 2rem;
+}
+
+.col {
+    flex: 1;
+
 }
