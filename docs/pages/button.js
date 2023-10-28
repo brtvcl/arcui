@@ -306,3 +306,103 @@ new Tabs({
         },
     ]
 }, document.getElementById("square-button-code"));
+
+
+// Attach Event
+const attachEventJsCode = `
+    const btn = new Button({
+        variant: 'primary',
+        text: 'Primary',
+        width: '200px'
+    }, document.getElementById('primary-button'));
+    
+    btn.on("click", () => {
+        console.log("clicked");
+    });
+`;
+
+// Detach Event
+const detachEventJsCode = `
+    const btn = new Button({
+        variant: 'primary',
+        text: 'Primary',
+        width: '200px'
+    }, document.getElementById('primary-button'));
+    
+    // Attach click handler
+    const id = btn.on("click", () => {
+        console.log("clicked");
+    });
+
+    // Remove click handler after 5 seconds
+    setTimeout(() => {
+        btn.off(id);
+    }, 5000)
+`;
+
+// JS Events Code
+new Tabs({
+    items: [
+        {
+            label: `<img width="24" src="/img/js.svg"/>`,
+            children: `<p>
+            The <span class="code">.on()</span> method attaches event handlers to the Arc UI components and 
+            returns an event listener <span class="code">id</span> that you can use to remove the event listener with <span class="code">.off()</span> method.
+                </p>
+                <p>
+                    You can find the event types below.
+                </p>
+                <h3>Example</h3>
+                <div class="row">
+                    <div class="col">
+                        <p>Attaching event listeners</p>
+                        <div>
+                            <td>
+                                <div id="attach-event-code">
+                                    ${highlightJsCode(attachEventJsCode, "javascript")}
+                                </div>
+                            </td>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p>Removing event listeners</p>
+                        <div>
+                            <td>
+                                <div id="detach-event-code">
+                                    ${highlightJsCode(detachEventJsCode, "javascript")}
+                                </div>
+                            </td>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4 mt-4">
+                    <table class="table">
+                        <thead>
+                            <th>Event</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="monospace">
+                                        click
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="code">
+                                        () => void
+                                    </span>
+                                    
+                                </td>
+                                <td>Fired when button is clicked</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>`,
+        key: "vanilla"
+        }
+    ]
+}, document.getElementById("events-section"));
+
