@@ -8,7 +8,8 @@
 .nav {
     list-style-type: none;
     padding-inline-start: 0;
-    height: 100%;   
+    position: sticky;
+    top: 2rem;
 }
 
 .nav a {

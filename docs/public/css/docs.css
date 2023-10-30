@@ -35,6 +35,9 @@ body {
     justify-content: space-between;
 }
 
+.content {
+    max-width: 960px
+}
 
 
 .index {
