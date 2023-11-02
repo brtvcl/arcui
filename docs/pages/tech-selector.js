@@ -5,5 +5,8 @@ techListChildren.forEach((child) => {
 		techListChildren.forEach((child) => {child.classList.remove('active')});
 
 		child.classList.add('active');
+
+		// change data atrribute in document
+		document.documentElement.dataset.arcDoc = child.dataset.tech;
 	});
 })

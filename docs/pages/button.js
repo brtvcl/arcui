@@ -30,6 +30,8 @@ const primaryButtonJsCode = `
         width: '200px'
     }, document.getElementById('primary-button'));`;
 
+document.getElementById('primary-button-js-code').innerHTML = highlightJsCode(primaryButtonJsCode, "javascript");
+
 const primaryButtonReactCode = `
     import { Button } from '@brtvcl/arcui';
     import '@brtvcl/arcui/dist/bundle.css';
@@ -38,20 +40,7 @@ const primaryButtonReactCode = `
         Primary
     <Button>`;
 
-new Tabs({
-    items: [
-        {
-            key: "vanilla",
-            label: `<img width="24" src="/img/js.svg"/>`,
-            children: highlightJsCode(primaryButtonJsCode, "javascript"),
-        },
-        {
-            key: "react",
-            label: `<img width="24" src="/img/react.svg"/>`,
-            children: highlightJsCode(primaryButtonReactCode, "jsx"),
-        }
-    ]
-}, document.getElementById("primary-button-code"));
+document.getElementById('primary-button-react-code').innerHTML = highlightJsCode(primaryButtonReactCode, "jsx");
 
 // Secondary Button
 new Button({

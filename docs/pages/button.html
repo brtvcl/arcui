@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-arc-doc="js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +13,19 @@
         <div class="sidebar">
             <div class="sidebar-wrapper">
                 <ul id="tech-selector" class="tech-selector">
-                    <li class="active">
+                    <li class="active" data-tech="js">
                         <img src="/img/js.svg" width="24" height="24" alt="">
                     </li>
-                    <li>
+                    <li data-tech="react">
                         <img src="/img/react.svg" width="24" height="24" alt="">
                     </li>
-                    <li>
+                    <li data-tech="angular">
                         <img src="/img/angular.svg" width="24" height="24" alt="">
                     </li>
-                    <li>
+                    <li data-tech="vue">
                         <img src="/img/vue.svg" width="24" height="24" alt="">
                     </li>
-                    <li>
+                    <li data-tech="svelte">
                         <img src="/img/svelte.svg" width="24" height="24" alt="">
                     </li>
                 </ul>
@@ -61,7 +61,10 @@
                     <div id="variants-primary">
                         <h3>Primary Button</h3>
                         <div id="primary-button"></div>
-                        <div class="mt-2" id="primary-button-code"></div>
+                        <div class="mt-2">
+                            <div id="primary-button-js-code" class="doc doc-js"></div>
+                            <div id="primary-button-react-code" class="doc doc-react"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col">

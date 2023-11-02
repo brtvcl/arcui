@@ -2,6 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
+.doc {
+    display: none;
+}
+[data-arc-doc=js] .doc-js  {
+    display: block;
+}
+[data-arc-doc=react] .doc-react {
+    display: block;
+}
+
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
     color: #4F5159;
