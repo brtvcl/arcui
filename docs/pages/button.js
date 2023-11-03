@@ -280,7 +280,7 @@ new Button({
 const squareButtonJsCode = `
     new Button({
         variant: 'outline',
-        text: 'Icon',
+        text: 'Icon', // Won't render because square is true
         width: '150px',
         icon: '🗑️',
         square: true,
