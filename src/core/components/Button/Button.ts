@@ -117,6 +117,10 @@ export class Button {
 
 		// EVENT LISTENERS
 		el.addEventListener("click", () => {
+			// Short circuit event dispatching if button is disabled
+			if (state.disabled) {
+				return;
+			}
 			// Call the registered events with type click
 			instance.eventRegister.forEach(event => {
 				if (event.type == "click") {
