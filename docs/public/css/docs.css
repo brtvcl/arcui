@@ -151,3 +151,46 @@ body {
     flex: 1;
 
 }
+
+.snippet {
+    background: #F4F6F7;
+    border: 1px solid #CAD4D8;
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.snippet-header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(50px, 0);
+    }
+
+    7.5% {
+        opacity: 1;
+        transform: translate(0px, 0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translate(0px, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(50px, 0);
+    }
+}
+
+.snippet-copied {
+    font-family: 'Open Sans', sans-serif;
+    animation: fadeInOut 3500ms ease-in-out 0ms forwards;
+    color: #74798C;
+    font-size: 14px;
+    margin-right: 1rem;
+}
