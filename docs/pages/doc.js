@@ -1,13 +1,45 @@
 // Add copy button to snippets
 import { Button } from "@brtvcl/arcui";
 
+function fallbackCopyTextToClipboard(text) {
+    let textArea = document.createElement("textarea");
+    textArea.value = text;
+
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        console.error('Unable to copy', err);
+    }
+
+    document.body.removeChild(textArea);
+}
+
+function copyTextToClipboard(text) {
+    if (!navigator.clipboard) {
+        fallbackCopyTextToClipboard(text);
+        return;
+    }
+    navigator.clipboard.writeText(text)
+        .catch((err) => {
+            console.error('Could not copy text: ', err);
+        });
+}
+
 // Add Snippet Copy Button to all snippets
 let snippets = document.querySelectorAll(".snippet");
 snippets.forEach((snippet) => {
     const snippetHeader = document.createElement("div");
     snippetHeader.classList.add("snippet-header");
     snippet.prepend(snippetHeader);
-    
     
     const copyButtonContainer = document.createElement("div");
     snippetHeader.append(copyButtonContainer);
@@ -21,6 +53,8 @@ snippets.forEach((snippet) => {
 
     // When clicked animate "Copied!" text and disable button for few seconds
     copyButton.on("click", () => {
+        copyTextToClipboard(snippet.innerText);
+
         copyButton.update({
             disabled: true
         });
