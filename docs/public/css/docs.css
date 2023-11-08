@@ -149,8 +149,8 @@ body {
 }
 
 .col {
-    flex: 1;
-
+    flex: 1 0 0px;
+    width: 0;
 }
 
 .snippet {
