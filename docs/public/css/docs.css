@@ -160,6 +160,10 @@ body {
     padding: 1rem;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
 .snippet-header {
     display: flex;
     justify-content: end;

@@ -73,7 +73,12 @@
                     <div id="variants-secondary">
                         <h3>Secondary Button</h3>
                         <div id="secondary-button"></div>
-                        <div class="mt-2" id="secondary-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-react" id="secondary-button-react-code"></div>
+                                <div class="doc doc-js" id="secondary-button-js-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,14 +87,24 @@
                     <div id="variants-outline">
                         <h3>Outline Button</h3>
                         <div id="outline-button"></div>
-                        <div class="mt-2" id="outline-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="outline-button-js-code"></div>
+                                <div class="doc doc-react" id="outline-button-react-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div id="variants-ghost">
                         <h3>Ghost Button</h3>
                         <div id="ghost-button"></div>
-                        <div class="mt-2" id="ghost-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="ghost-button-js-code"></div>
+                                <div class="doc doc-react" id="ghost-button-react-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,14 +120,24 @@
                     <div id="status-disabled">
                         <h3>Disabled Button</h3>
                         <div id="disabled-button"></div>
-                        <div class="mt-2" id="disabled-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="disabled-button-js-code"></div>
+                                <div class="doc doc-react" id="disabled-button-react-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div id="status-loading">
                         <h3>Loading Button</h3>
                         <div id="loading-button"></div>
-                        <div class="mt-2" id="loading-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="loading-button-js-code"></div>
+                                <div class="doc doc-react" id="loading-button-react-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,14 +153,24 @@
                     <div id="size-small">
                         <h3>Small Button</h3>
                         <div id="small-button"></div>
-                        <div class="mt-2" id="small-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="small-button-js-code"></div>
+                                <div class="doc doc-react" id="small-button-react-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
                     <div id="size-large">
                         <h3>Large Button</h3>
                         <div id="large-button"></div>
-                        <div class="mt-2" id="large-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="large-button-js-code"></div>
+                                <div class="doc doc-react" id="large-button-react-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,7 +187,12 @@
                     <div id="icon-prop-button">
                         <h3>Icon Button</h3>
                         <div id="icon-button"></div>
-                        <div class="mt-2" id="icon-button-code"></div>
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="icon-button-js-code"></div>
+                                <div class="doc doc-react" id="icon-button-react-code"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
@@ -160,7 +200,12 @@
                         <h3>Square Button</h3>
                         <p>Square button only works with icon</p>
                         <div id="square-button"></div>
-                        <div class="mt-2" id="square-button-code"></div>           
+                        <div class="mt-2">
+                            <div class="snippet">
+                                <div class="doc doc-js" id="square-button-js-code"></div>
+                                <div class="doc doc-react" id="square-button-react-code"></div>
+                            </div>
+                        </div>       
                     </div>
                 </div>
             </div>
@@ -279,7 +324,64 @@
             </table>
     
             <h2 id="events">Events</h2>
-            <div id="events-section"></div>
+            <div class="doc doc-js">
+                <p>
+                    The <span class="code">.on()</span> method attaches event handlers to the Arc UI components and 
+                    returns an event listener <span class="code">id</span> that you can use to remove the event listener with <span class="code">.off()</span> method.
+                </p>
+                <p>
+                    You can find the event types below.
+                </p>
+                <h3>Example</h3>
+                <div class="row">
+                    <div class="col">
+                        <p>Attaching event listeners</p>
+                        <div>
+                            <td>
+                                <div class="snippet">
+                                    <div id="attach-event-js-code"></div>
+                                </div>
+                            </td>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <p>Removing event listeners</p>
+                        <div>
+                            <td>
+                                <div class="snippet">
+                                    <div id="detach-event-js-code"></div>
+                                </div>
+                            </td>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4 mt-4">
+                    <table class="table">
+                        <thead>
+                            <th>Event</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="monospace">
+                                        click
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="code">
+                                        () => void
+                                    </span>
+                                    
+                                </td>
+                                <td>Fired when button is clicked</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <nav class="index">
             <div class="index-wrapper">
