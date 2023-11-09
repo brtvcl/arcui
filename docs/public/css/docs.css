@@ -52,9 +52,10 @@ body {
 
 
 .index {
-    flex: 0 1 300px;
+    flex: 0 1 260px;
     box-sizing: border-box;
-    padding-right: 4rem;
+    padding-right: 2rem;
+    font-size: 0.8rem;
 }
 
 .index-wrapper {
