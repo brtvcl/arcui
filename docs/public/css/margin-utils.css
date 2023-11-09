@@ -56,3 +56,9 @@
 .mb-7 {
     margin-bottom: 7rem;
 }
+
+
+/* Margin Left*/
+.ml-auto {
+    margin-left: auto;
+}

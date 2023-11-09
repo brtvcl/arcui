@@ -146,8 +146,29 @@ body {
     background-color: #CCDDFF
 }
 
+.navbar {
+    height: 60px;
+    border-bottom: 1px solid #EAEEEF;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    gap: 1rem;
+}
 
-@media only screen and (max-width: 760px) {
+
+
+.navbar a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: #7B7D82;
+}
+
+.navbar a:hover {
+    color: #0053FE;
+}
+
+
+@media only screen and (max-width: 960px) {
     .sidebar {
         display: none;
     }
