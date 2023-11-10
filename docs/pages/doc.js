@@ -87,3 +87,16 @@ new Input({
   `,
   width: "180px",
 }, document.getElementById("searchbar"))
+
+
+// Toggle navbar Menu
+const toggleMenuButton = document.getElementById("toggle-menu");
+const navbar = document.querySelector(".navbar");
+toggleMenuButton.addEventListener("click", () => {
+    navbar.classList.toggle("expanded");
+});
+
+// Hide navbar on screen size change
+window.addEventListener("resize", () => {
+    navbar.classList.remove("expanded");
+})
