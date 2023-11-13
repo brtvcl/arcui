@@ -23,3 +23,17 @@ toggleMenuButton.addEventListener("click", () => {
 window.addEventListener("resize", () => {
     navbar.classList.remove("expanded");
 })
+
+// Framework selector
+const frameworks = document.querySelectorAll(".framework");
+
+let activeFramework = "js";
+frameworks.forEach((framework) => {
+    framework.addEventListener("mouseenter", (e) => {
+        console.log(framework)
+        const tech = framework.dataset.fw;
+        activeFramework = tech;
+        frameworks.forEach((framework) => framework.classList.remove("active"))
+        framework.classList.add("active");
+    })
+})

@@ -1,3 +1,44 @@
 .hero {
     text-align: center;
 }
+
+.wave {
+    line-height: 0;
+}
+
+.frameworks-container {
+    text-align: center;
+    background-color: #3375FE;
+    color: #fff;
+    margin-top: 0;
+    padding: 2rem 0 ;
+}
+
+.framework-selector {
+    margin-top: 4rem;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.framework {
+    cursor: pointer;
+}
+
+.framework:not(.active) {
+    filter: sepia(100%) hue-rotate(170deg) contrast(1.2) saturate(1.2);
+}
+
+.framework:hover {
+    filter: none;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+}
