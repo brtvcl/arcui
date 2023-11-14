@@ -8,10 +8,10 @@
 
 .frameworks-container {
     text-align: center;
-    background-color: #3375FE;
-    color: #fff;
+    background-color: #CCDDFF;
+    color: #15073b;
     margin-top: 0;
-    padding: 2rem 0 ;
+    padding: 0 0 2rem 0;
 }
 
 .framework-selector {
@@ -27,7 +27,7 @@
 }
 
 .framework:not(.active) {
-    filter: sepia(100%) hue-rotate(170deg) contrast(1.2) saturate(1.2);
+    filter: sepia(100%) hue-rotate(170deg) brightness(0.8) saturate(1.2);
 }
 
 .framework:hover {
