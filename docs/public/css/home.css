@@ -8,10 +8,11 @@
 
 .frameworks-container {
     text-align: center;
-    background-color: #CCDDFF;
-    color: #15073b;
+    background-color: #0c57a2;
+    color: #ffffff; 
     margin-top: 0;
     padding: 0 0 2rem 0;
+    min-height: 300px;
 }
 
 .framework-selector {
@@ -20,6 +21,26 @@
     list-style-type: none;
     justify-content: center;
     gap: 4rem;
+}
+
+.framework-content {
+    display: none;
+}
+
+.frameworks-container[data-active-fw="js"] .framework-content[data-fw="js"] {
+    display: block;
+}
+.frameworks-container[data-active-fw="react"] .framework-content[data-fw="react"] {
+    display: block;
+}
+.frameworks-container[data-active-fw="angular"] .framework-content[data-fw="angular"] {
+    display: block;
+}
+.frameworks-container[data-active-fw="vue"] .framework-content[data-fw="vue"] {
+    display: block;
+}
+.frameworks-container[data-active-fw="svelte"] .framework-content[data-fw="svelte"] {
+    display: block;
 }
 
 .framework {

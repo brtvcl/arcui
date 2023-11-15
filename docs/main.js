@@ -45,14 +45,17 @@ window.addEventListener("resize", () => {
 
 // Framework selector
 const frameworks = document.querySelectorAll(".framework");
+const frameworksContainer = document.querySelector('.frameworks-container');
 
 let activeFramework = "js";
 frameworks.forEach((framework) => {
     framework.addEventListener("mouseenter", (e) => {
-        console.log(framework)
         const tech = framework.dataset.fw;
         activeFramework = tech;
         frameworks.forEach((framework) => framework.classList.remove("active"))
         framework.classList.add("active");
+
+        frameworksContainer.dataset.activeFw = tech;
+
     })
 })
