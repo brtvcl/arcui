@@ -25,7 +25,7 @@ new Input({
 // Hero Get Started
 new Button({
     text: "Get Started",
-    variant: "primary",
+    variant: "secondary",
     width: "160px",
     size: "large"
 }, document.getElementById("hero-get-started"));
