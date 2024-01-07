@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
 
 .hero {
     text-align: center;
@@ -10,9 +10,16 @@
 
 .hero h1 {
     color: #23262F;
-    font-size: 4rem;
+    font-size: 5.5rem;
+    font-weight: 800;
     margin: 0;
     width: 80%;
+    --hero-from-color: #2271f0;
+    --hero-to-color: #a8c7e9;
+    background-image: linear-gradient(to right, var(--hero-from-color), var(--hero-to-color));
+    background-clip: text;
+    background-position: top left;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero h3 {
@@ -28,7 +35,6 @@
 
 .frameworks-container {
     text-align: center;
-    background-color: #0c57a2;
     color: #ffffff; 
     margin-top: 0;
     padding: 0 0 2rem 0;
@@ -44,12 +50,13 @@
     display: flex;
     list-style-type: none;
     justify-content: center;
-    gap: 4rem;
+    gap: 0.75rem;
 }
 
 .framework-content {
     display: none;
 }
+
 
 .frameworks-container[data-active-fw="js"] .framework-content[data-fw="js"] {
     display: block;
@@ -69,6 +76,10 @@
 
 .framework {
     cursor: pointer;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #9eb5e733;
+    transition: transform 0.3s;
 }
 
 .framework:not(.active) {
@@ -77,6 +88,8 @@
 
 .framework:hover {
     filter: none;
+    transform: scale(1.05);
+    background-color: #c3d5fb67;    
 }
 
 h2 {

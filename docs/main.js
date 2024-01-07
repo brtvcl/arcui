@@ -46,6 +46,30 @@ window.addEventListener("resize", () => {
 // Framework selector
 const frameworks = document.querySelectorAll(".framework");
 const frameworksContainer = document.querySelector('.frameworks-container');
+const heroTitle = document.querySelector(".hero h1");
+
+const frameworksColors = {
+    js: {
+        from: "#f0db4f",
+        to: "#ff8702"
+    },
+    react: {
+        from: "#443af9",
+        to: "#61dbfb"
+    },
+    angular: {
+        from: "#db1b16",
+        to: "#410a0a"
+    },
+    vue: {
+        from: "#41b883",
+        to: "#216b8a"
+    },
+    svelte: {
+        from: "#ff3e00",
+        to: "#ffc686"
+    },
+}
 
 let activeFramework = "js";
 frameworks.forEach((framework) => {
@@ -57,5 +81,6 @@ frameworks.forEach((framework) => {
 
         frameworksContainer.dataset.activeFw = tech;
 
+        heroTitle.style = `--hero-from-color: ${frameworksColors[tech].from}; --hero-to-color: ${frameworksColors[tech].to}`
     })
 })
