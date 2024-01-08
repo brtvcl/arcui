@@ -1,5 +1,9 @@
 import { Input, Button } from "@brtvcl/arcui";
 import "@brtvcl/arcui/dist/bundle.css";
+import Prism from "prismjs";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-jsx";
+import "prismjs/themes/prism.min.css";
 
 // Search bar
 new Input({
@@ -84,3 +88,23 @@ frameworks.forEach((framework) => {
         heroTitle.style = `--hero-from-color: ${frameworksColors[tech].from}; --hero-to-color: ${frameworksColors[tech].to}`
     })
 })
+
+// Add Snippet Copy Button to all snippets
+function highlightJsCode(code, language) {
+    return `<pre><code>${Prism.highlight(code, Prism.languages[language], language)}</code></pre>`;
+}
+
+const frameworkConfig = {
+    js: {
+        grammar: "js"
+    },
+    react: {
+        grammar: "jsx"
+    },
+
+};
+
+Object.entries(frameworkConfig).forEach(([framework, config]) => {
+    const jsCode = document.querySelector(`.framework-content[data-fw="${framework}"] .snippet`);
+    jsCode.innerHTML = highlightJsCode(`// ${framework} Code here`, config.grammar);
+});
