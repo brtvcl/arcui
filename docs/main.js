@@ -55,27 +55,33 @@ const heroTitle = document.querySelector(".hero h1");
 const frameworksColors = {
     js: {
         from: "#f0db4f",
-        to: "#ff8702"
+        to: "#ff8702",
+        glow: "#f0db4f10"
     },
     react: {
         from: "#443af9",
-        to: "#61dbfb"
+        to: "#61dbfb",
+        glow: "#443af920",
     },
     angular: {
         from: "#db1b16",
-        to: "#410a0a"
+        to: "#410a0a",
+        glow: "#db1b1615",
     },
     vue: {
         from: "#41b883",
-        to: "#216b8a"
+        to: "#216b8a",
+        glow: "#41b88320",
     },
     svelte: {
         from: "#ff3e00",
-        to: "#ffc686"
+        to: "#ffc686",
+        glow: "#ff3e0015",
     },
 }
 
 let activeFramework = "js";
+const heroGlowElement = document.querySelector(".glow");
 frameworks.forEach((framework) => {
     framework.addEventListener("mouseenter", (e) => {
         const tech = framework.dataset.fw;
@@ -84,8 +90,9 @@ frameworks.forEach((framework) => {
         framework.classList.add("active");
 
         frameworksContainer.dataset.activeFw = tech;
-
-        heroTitle.style = `--hero-from-color: ${frameworksColors[tech].from}; --hero-to-color: ${frameworksColors[tech].to}`
+        heroGlowElement.style = `--hero-glow-color: ${frameworksColors[tech].glow};`;
+        console.log(heroGlowElement);
+        heroTitle.style = `--hero-from-color: ${frameworksColors[tech].from}; --hero-to-color: ${frameworksColors[tech].to}`;
     })
 })
 
