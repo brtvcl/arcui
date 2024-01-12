@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
-
+* {
+    box-sizing: border-box;
+}
 .hero {
     text-align: center;
     padding: 4rem 0;
@@ -22,6 +24,13 @@
     -webkit-text-fill-color: transparent;
 }
 
+
+@media screen and (max-width: 992px) {
+    .hero h1 {
+        width: 100%;
+    }
+}
+
 .hero .glow {
     --hero-glow-color: #2271f030;
     --hero-dim-color: #ffffff01;
@@ -30,6 +39,7 @@
     width: 100%;
     height: 100%;
     top: -10%;
+    z-index: -1;
 }
 
 .hero h3 {
@@ -48,6 +58,7 @@
     margin-top: 0;
     padding: 0 0 2rem 0;
     min-height: 300px;
+    max-width: 728px;
 }
 
 .frameworks-container h1 {
@@ -60,6 +71,8 @@
     list-style-type: none;
     justify-content: center;
     gap: 0.75rem;
+    flex-wrap: wrap;
+    padding: 0;
 }
 
 .framework-content {
@@ -93,10 +106,11 @@
 
 .framework {
     cursor: pointer;
-    padding: 1rem;
+    padding: 1.75rem;
     border-radius: 1rem;
     background-color: #9eb5e733;
     transition: transform 0.3s;
+    flex: 0 0 auto;
 }
 
 .framework:not(.active) {
