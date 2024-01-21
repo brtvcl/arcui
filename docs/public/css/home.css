@@ -123,8 +123,10 @@
     background-color: #c3d5fb67;    
 }
 
+
+
 h2 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 
@@ -159,4 +161,81 @@ a:hover {
 
 .footer {
     padding: 4rem 0rem;
+}
+.task {
+    border-radius: 10rem; 
+    width: 3rem; 
+    height: 3rem; 
+}
+.done-task {
+    background-color: green; 
+    border: 0.5rem solid lightgreen;
+}
+.planned-task {
+    background-color: blue; 
+    border: 0.5rem solid lightblue;
+}
+.progress-task {
+    background-color: yellow; 
+    border: 0.5rem solid lightyellow;
+}
+
+
+/* MARGIN UTILS */
+.m-0 {
+    margin: 0;
+}
+.ml-100 {
+    margin-left: 1rem;
+}
+
+/* FLEX UTILS*/
+.flex {
+    display: flex;
+}
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+/* FONT & TEXT UTILS*/
+.text-center {
+    text-align: center;
+}
+.fs-200 {
+    font-size: 1.5rem;
+}
+
+/* COLORS */
+.c-ink-100 {
+    color: #23262F;
+}
+.c-ink-80 {
+    color: #7B7D82;
+}
+
+.roadmap {
+    list-style: none;
+}
+.roadmap li {
+    margin-top: 30px;
+    position: relative;
+}
+.roadmap-text {
+    color: #9094A3;
+}
+.task-line {
+    position: absolute;
+    width: 4px;
+    height: 2rem;
+    top: 48px;
+    left: 22px;
+    background-color: #C7C9D1;
 }
