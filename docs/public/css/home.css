@@ -168,16 +168,16 @@ a:hover {
     height: 3rem; 
 }
 .done-task {
-    background-color: green; 
-    border: 0.5rem solid lightgreen;
+    background-color: #7FE162;
+    border: 0.5rem solid #CBFAAE;;
 }
 .planned-task {
-    background-color: blue; 
-    border: 0.5rem solid lightblue;
+    background-color: #5394FC; 
+    border: 0.5rem solid #DCEFFE;
 }
 .progress-task {
-    background-color: yellow; 
-    border: 0.5rem solid lightyellow;
+    background-color: #FFC548; 
+    border: 0.5rem solid #FFF4CE;
 }
 
 
