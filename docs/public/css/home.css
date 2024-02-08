@@ -169,6 +169,7 @@ a:hover {
     border-radius: 10rem; 
     width: 3rem; 
     height: 3rem; 
+    flex-shrink:0;
 }
 .done-task {
     background-color: #6BC951;
@@ -184,6 +185,9 @@ a:hover {
 }
 
 /* WIDTH & HEIGHT UTILS*/
+.w-full {
+    width: 100%;
+}
 .w-200 {
     width: 2rem;
 }
@@ -201,8 +205,14 @@ a:hover {
 .mt-400 {
     margin-top: 4rem;
 }
+.ml-50 {
+    margin-left: 0.5rem;
+}
 .ml-100 {
     margin-left: 1rem;
+}
+.ml-auto {
+    margin-left: auto;
 }
 
 /* FLEX UTILS*/
@@ -219,6 +229,9 @@ a:hover {
 
 .justify-content-center {
     justify-content: center;
+}
+.flex-0 {
+    flex:0;
 }
 
 /* FONT & TEXT UTILS*/
